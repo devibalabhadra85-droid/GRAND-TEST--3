@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APTET 2026 – CDP | SURESHMATHSMATERIAL | క్విజ్-14</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px 30px 30px;
+            border-radius: 14px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+        }
+
+        /* ----- HEADER ----- */
+        .header-section {
+            text-align: center;
+            background: linear-gradient(135deg, #1B5E20, #1A237E);
+            color: #ffffff;
+            padding: 18px 20px 14px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+            position: relative;
+        }
+        .home-link {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+        }
+        .home-link:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+        .header-section .date-badge {
+            display: inline-block;
+            background: #FFD54F;
+            color: #1A237E;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .header-section h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .header-section h2 {
+            margin: 6px 0 2px;
+            font-size: 22px;
+            color: #FFD54F;
+            font-weight: 600;
+        }
+        .header-section h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #C8E6C9;
+            font-weight: 400;
+        }
+
+        /* ----- TIMER & CONTROLS ----- */
+        .timer-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: #E8F5E9;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 22px;
+            border: 1px solid #A5D6A7;
+        }
+        .timer-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .timer-box span {
+            font-weight: 600;
+            font-size: 17px;
+            color: #1B5E20;
+        }
+        #timerDisplay {
+            font-size: 38px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            background: #1B5E20;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 6px;
+            letter-spacing: 2px;
+            min-width: 100px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+        #timerDisplay.warning {
+            background: #D84315;
+            animation: blink 1s ease-in-out infinite;
+        }
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .timer-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .timer-actions button {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .btn-start {
+            background: #2E7D32;
+            color: #fff;
+        }
+        .btn-start:hover {
+            background: #1B5E20;
+        }
+        .btn-start:disabled {
+            background: #9E9E9E;
+            cursor: not-allowed;
+        }
+        .btn-pause {
+            background: #F57F17;
+            color: #fff;
+        }
+        .btn-pause:hover {
+            background: #E65100;
+        }
+        .btn-pause:disabled {
+            background: #9E9E9E;
+            cursor: not-allowed;
+        }
+        .btn-reset {
+            background: #C62828;
+            color: #fff;
+        }
+        .btn-reset:hover {
+            background: #B71C1C;
+        }
+
+        .print-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+        .print-controls button {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .btn-print-student {
+            background: #1565C0;
+            color: #fff;
+        }
+        .btn-print-student:hover {
+            background: #0D47A1;
+        }
+        .btn-print-teacher {
+            background: #6A1B9A;
+            color: #fff;
+        }
+        .btn-print-teacher:hover {
+            background: #4A148C;
+        }
+        .mode-indicator {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            background: #E0E0E0;
+            color: #333;
+            margin-left: 6px;
+        }
+        .mode-indicator.student {
+            background: #BBDEFB;
+            color: #0D47A1;
+        }
+        .mode-indicator.teacher {
+            background: #E1BEE7;
+            color: #4A148C;
+        }
+
+        /* ----- QUESTION CARDS ----- */
+        .question-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            background: #fafafa;
+            transition: 0.2s;
+        }
+        .question-card:hover {
+            border-color: #81C784;
+        }
+        .question-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .lang-en {
+            color: #1B5E20;
+            margin-bottom: 4px;
+        }
+        .lang-te {
+            color: #D84315;
+            margin-bottom: 8px;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+        .options li {
+            margin-bottom: 8px;
+            padding: 10px 14px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .options li:hover {
+            background: #E8F5E9;
+            border-color: #81C784;
+        }
+        .options li label {
+            cursor: pointer;
+            display: block;
+        }
+        .options li input[type="radio"] {
+            margin-right: 12px;
+            accent-color: #1B5E20;
+        }
+
+        .btn-group {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn-group button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .btn-hint {
+            background: #FFB300;
+            color: #333;
+        }
+        .btn-hint:hover {
+            background: #FF8F00;
+        }
+        .btn-check {
+            background: #2E7D32;
+            color: #fff;
+        }
+        .btn-check:hover {
+            background: #1B5E20;
+        }
+
+        .feedback-box {
+            margin-top: 12px;
+            padding: 14px 16px;
+            border-radius: 6px;
+            display: none;
+            font-size: 15px;
+            border: 1px solid transparent;
+        }
+        .feedback-box.correct {
+            display: block;
+            background: #E8F5E9;
+            color: #1B5E20;
+            border-color: #A5D6A7;
+        }
+        .feedback-box.incorrect {
+            display: block;
+            background: #FFEBEE;
+            color: #B71C1C;
+            border-color: #EF9A9A;
+        }
+        .explanation {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ccc;
+            font-style: italic;
+        }
+        .explanation b {
+            font-style: normal;
+        }
+
+        /* ----- HINT MODAL ----- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+        }
+        .modal-content {
+            background: #fff;
+            margin: 12% auto;
+            padding: 24px 28px;
+            border-radius: 10px;
+            max-width: 550px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .modal-content .close {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 30px;
+            font-weight: 700;
+            color: #aaa;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .modal-content .close:hover {
+            color: #000;
+        }
+        .modal-content h3 {
+            margin-top: 0;
+            color: #F57F17;
+        }
+        .modal-content p {
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer-section {
+            text-align: center;
+            background: #E8F5E9;
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin-top: 28px;
+            border: 1px solid #A5D6A7;
+            color: #1B5E20;
+            line-height: 1.7;
+        }
+        .footer-section p {
+            margin: 2px 0;
+            font-size: 15px;
+        }
+        .footer-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1A237E;
+            margin-bottom: 4px !important;
+        }
+
+        /* ----- PRINT STYLES ----- */
+        .no-print { /* elements to hide in print */ }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: #fff !important;
+                padding: 10px !important;
+            }
+            .container {
+                box-shadow: none !important;
+                padding: 10px !important;
+                max-width: 100% !important;
+            }
+            .header-section {
+                background: #1B5E20 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 12px !important;
+                margin-bottom: 12px !important;
+            }
+            .header-section .date-badge {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .header-section h1 { font-size: 22px !important; }
+            .header-section h2 { font-size: 18px !important; }
+            .header-section h3 { font-size: 15px !important; }
+
+            .timer-controls, .btn-group, .btn-hint, .btn-check,
+            .print-controls, .timer-actions, .no-print {
+                display: none !important;
+            }
+
+            .question-card {
+                border: 1px solid #ddd !important;
+                background: #fff !important;
+                margin-bottom: 14px !important;
+                padding: 14px 16px !important;
+                page-break-inside: avoid !important;
+            }
+            .question-text { font-size: 14px !important; }
+            .options li {
+                border: 1px solid #ddd !important;
+                background: #fff !important;
+                padding: 6px 10px !important;
+                margin-bottom: 4px !important;
+            }
+            .options li input[type="radio"] { display: none !important; }
+            .options li label { cursor: default !important; }
+
+            .feedback-box { display: none !important; }
+
+            .footer-section {
+                background: #E8F5E9 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 12px !important;
+                margin-top: 16px !important;
+            }
+
+            /* Teacher mode: show answers & explanations */
+            .print-teacher .feedback-box {
+                display: block !important;
+                background: #f5f5f5 !important;
+                border: 1px solid #ccc !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 10px !important;
+                margin-top: 8px !important;
+            }
+            .print-teacher .feedback-box.correct {
+                background: #E8F5E9 !important;
+                border-color: #A5D6A7 !important;
+            }
+            .print-teacher .feedback-box.incorrect {
+                background: #FFEBEE !important;
+                border-color: #EF9A9A !important;
+            }
+            .print-teacher .btn-group { display: none !important; }
+            .print-teacher .options li input[type="radio"] { display: none !important; }
+
+            /* Student mode: hide answers, feedback, explanations */
+            .print-student .feedback-box { display: none !important; }
+            .print-student .explanation { display: none !important; }
+            .print-student .btn-group { display: none !important; }
+            .print-student .options li input[type="radio"] { display: none !important; }
+
+            .modal { display: none !important; }
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 700px) {
+            .container { padding: 12px 14px; }
+            .timer-controls { flex-direction: column; align-items: stretch; gap: 12px; }
+            .timer-box { justify-content: center; }
+            .timer-actions { justify-content: center; }
+            .print-controls { justify-content: center; }
+            #timerDisplay { font-size: 30px; min-width: 80px; padding: 4px 12px; }
+            .header-section h1 { font-size: 22px; }
+            .header-section h2 { font-size: 18px; }
+            .modal-content { width: 95%; margin: 20% auto; }
+        }
+        @media (max-width: 480px) {
+            #timerDisplay { font-size: 24px; min-width: 70px; padding: 3px 10px; }
+            .question-card { padding: 14px 12px; }
+            .options li { padding: 8px 10px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContainer">
+
+        <!-- HEADER -->
+        <div class="header-section">
+            <a class="home-link no-print" href="index.html">🏠 Home</a>
+            <h2>SURESHMATHSMATERIAL</h2>
+            <div class="date-badge">GRAND TEST- 3</div>
+            <h1>APTET 2026 – CDP</h1>
+            <!-- <h3>క్విజ్ – 14 (కొత్త ప్రశ్నలు)</h3> -->
+        </div>
+
+        <!-- TIMER + CONTROLS -->
+        <div class="timer-controls no-print">
+            <div class="timer-box">
+                <span>⏱ టైమర్</span>
+                <div id="timerDisplay">00:00</div>
+            </div>
+            <div class="timer-actions">
+                <button class="btn-start" id="btnStart" onclick="startTimer()">▶ ప్రారంభించు</button>
+                <button class="btn-pause" id="btnPause" onclick="pauseTimer()" disabled>⏸ విరామం</button>
+                <button class="btn-reset" onclick="resetTimer()">⟳ రీసెట్</button>
+            </div>
+            <!-- <div class="print-controls">
+                <button class="btn-print-student" onclick="printQuiz('student')">🖨 విద్యార్థి ప్రింట్</button>
+                <button class="btn-print-teacher" onclick="printQuiz('teacher')">🖨 ఉపాధ్యాయ ప్రింట్</button>
+                <span id="modeIndicator" class="mode-indicator student">విద్యార్థి మోడ్</span>
+            </div> -->
+        </div>
+
+        <!-- QUIZ CONTAINER -->
+        <div id="quiz-container"></div>
+
+        <!-- FOOTER -->
+        <div class="footer-section">
+            <p style="color:#607D8B;font-size:14px;margin-bottom:6px;"><i>తయారు చేసినవారు</i></p>
+            <p class="footer-name">K. మునీశ్వర రెడ్డి</p>
+            <!-- <p><b>SA (గణితం)</b></p>
+            <p>ZPHS గుండెలిగుంట</p>
+            <p>తిరుపతి జిల్లా</p> -->
+        </div>
+
+    </div>
+
+    <!-- HINT MODAL -->
+    <div id="hintModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeHint()">&times;</span>
+            <h3>💡 సూచన / Hint</h3>
+            <p id="hintTextEn" class="lang-en" style="font-weight:700;color:#1B5E20;"></p>
+            <p id="hintTextTe" class="lang-te" style="font-weight:700;color:#D84315;"></p>
+        </div>
+    </div>
+
+    <script>
+        // ===================== DATA (30 fresh questions) =====================
+        const questionsData = [{
+            id: 1,
+            q_en: "In Piaget's theory, the stage where children begin to use symbols and mental images, but lack logical reasoning, is called:",
+            q_te: "పియాజె సిద్ధాంతంలో, పిల్లలు చిహ్నాలు మరియు మానసిక చిత్రాలను ఉపయోగించడం ప్రారంభించే, కానీ తార్కిక తర్కం లేని దశను ఏమంటారు?",
+            options: [
+                { id: "A", en: "Sensorimotor Stage", te: "ఇంద్రియ చలన దశ" },
+                { id: "B", en: "Pre-operational Stage", te: "పూర్వ ప్రచాలక దశ (Pre-operational Stage)" },
+                { id: "C", en: "Concrete Operational Stage", te: "మూర్త ప్రచాలక దశ" },
+                { id: "D", en: "Formal Operational Stage", te: "నైరూప్య ప్రచాలక దశ" }
+            ],
+            answer: "B",
+            hint_en: "Symbolic thinking emerges, but logic is not yet mature.",
+            hint_te: "సంకేతాత్మక ఆలోచన ఉద్భవిస్తుంది, కానీ తర్కం ఇంకా పరిపక్వం చెందలేదు.",
+            exp_en: "The pre-operational stage (ages 2-7) is characterized by the use of symbols, egocentrism, and lack of conservation.",
+            exp_te: "పూర్వ ప్రచాలక దశ (2-7 సంవత్సరాలు) చిహ్నాల వినియోగం, అహంకేంద్రత మరియు సంరక్షణ లేకపోవడం ద్వారా వర్గీకరించబడుతుంది."
+        }, {
+            id: 2,
+            q_en: "Vygotsky emphasized that cognitive development is heavily influenced by:",
+            q_te: "వైగోట్స్కీ సంజ్ఞానాత్మక వికాసం దేని ద్వారా ఎక్కువగా ప్రభావితమవుతుందని నొక్కి చెప్పాడు?",
+            options: [
+                { id: "A", en: "Biological maturation alone.", te: "కేవలం జీవశాస్త్ర పరిపక్వత." },
+                { id: "B", en: "Social interaction and cultural tools.", te: "సామాజిక పరస్పర చర్య మరియు సాంస్కృతిక సాధనాలు." },
+                { id: "C", en: "Innate intelligence.", te: "సహజ మేధస్సు." },
+                { id: "D", en: "Random chance.", te: "యాదృచ్ఛిక అవకాశం." }
+            ],
+            answer: "B",
+            hint_en: "Learning is a social process.",
+            hint_te: "అభ్యసనం ఒక సామాజిక ప్రక్రియ.",
+            exp_en: "Vygotsky's sociocultural theory posits that social interaction and cultural tools (like language) are central to cognitive development.",
+            exp_te: "వైగోట్స్కీ యొక్క సామాజిక-సాంస్కృతిక సిద్ధాంతం సామాజిక పరస్పర చర్య మరియు సాంస్కృతిక సాధనాలు (భాష వంటివి) సంజ్ఞానాత్మక వికాసానికి కేంద్రంగా ఉన్నాయని నొక్కి చెబుతుంది."
+        }, {
+            id: 3,
+            q_en: "In Kohlberg's theory, the 'Good Boy/Nice Girl' orientation is characterized by a desire to:",
+            q_te: "కోల్బర్గ్ సిద్ధాంతంలో, 'మంచి బాలుడు/మంచి బాలిక' (Good Boy/Nice Girl) ధోరణి దేని కోసం కోరికతో వర్గీకరించబడుతుంది?",
+            options: [
+                { id: "A", en: "Avoid punishment.", te: "శిక్షను నివారించండి." },
+                { id: "B", en: "Gain approval and maintain social order.", te: "ఆమోదం పొందండి మరియు సామాజిక క్రమాన్ని నిలబెట్టండి." },
+                { id: "C", en: "Uphold universal ethical principles.", te: "సార్వత్రిక నైతిక సూత్రాలను సమర్థించండి." },
+                { id: "D", en: "Follow self-interest.", te: "స్వప్రయోజనాన్ని అనుసరించండి." }
+            ],
+            answer: "B",
+            hint_en: "Conventional level, focusing on social approval.",
+            hint_te: "సంప్రదాయ స్థాయి, సామాజిక ఆమోదంపై దృష్టి.",
+            exp_en: "At this stage (conventional level), individuals act to gain approval from others and maintain interpersonal relationships.",
+            exp_te: "ఈ దశలో (సంప్రదాయ స్థాయి), వ్యక్తులు ఇతరుల నుండి ఆమోదం పొందడానికి మరియు పరస్పర సంబంధాలను నిలబెట్టడానికి ప్రవర్తిస్తారు."
+        }, {
+            id: 4,
+            q_en: "Erikson's psychosocial crisis 'Industry vs. Inferiority' is most closely associated with which age group?",
+            q_te: "ఎరిక్సన్ యొక్క మనోసాంఘిక సంక్షోభం 'శ్రమించడం vs న్యూనత' (Industry vs. Inferiority) ఏ వయస్సు సమూహంతో ఎక్కువగా సంబంధం కలిగి ఉంటుంది?",
+            options: [
+                { id: "A", en: "Infancy (0-1 year)", te: "శైశవం (0-1 సంవత్సరం)" },
+                { id: "B", en: "Early childhood (2-3 years)", te: "బాల్యం ప్రారంభం (2-3 సంవత్సరాలు)" },
+                { id: "C", en: "School age (6-12 years)", te: "పాఠశాల వయస్సు (6-12 సంవత్సరాలు)" },
+                { id: "D", en: "Adolescence (12-18 years)", te: "కౌమారదశ (12-18 సంవత్సరాలు)" }
+            ],
+            answer: "C",
+            hint_en: "Children develop competence through tasks and activities.",
+            hint_te: "పిల్లలు పనులు మరియు కార్యకలాపాల ద్వారా సామర్థ్యాన్ని అభివృద్ధి చేస్తారు.",
+            exp_en: "This stage occurs during school age, where children strive to master skills and feel capable, or risk feeling inferior.",
+            exp_te: "ఈ దశ పాఠశాల వయస్సులో సంభవిస్తుంది, ఇక్కడ పిల్లలు నైపుణ్యాలను సాధించడానికి మరియు సామర్థ్యం అనుభూతి చెందడానికి ప్రయత్నిస్తారు, లేదా న్యూనత భావనకు గురవుతారు."
+        }, {
+            id: 5,
+            q_en: "According to RTE Act 2009, Section 29(1), the curriculum should be such that it is:",
+            q_te: "RTE చట్టం 2009, సెక్షన్ 29(1) ప్రకారం, పాఠ్యప్రణాళిక ఎలా ఉండాలి?",
+            options: [
+                { id: "A", en: "Only focused on rote memorization.", te: "కేవలం బట్టీ పట్టడంపై దృష్టి పెట్టాలి." },
+                { id: "B", en: "Child-centered, activity-based, and connected to life.", te: "పిల్లల-కేంద్రిత, కార్యాచరణ-ఆధారిత, మరియు జీవితంతో అనుసంధానించబడి ఉండాలి." },
+                { id: "C", en: "Based solely on exams.", te: "కేవలం పరీక్షలపై ఆధారపడి ఉండాలి." },
+                { id: "D", en: "Uniform for all schools.", te: "అన్ని పాఠశాలలకు ఏకరీతిగా ఉండాలి." }
+            ],
+            answer: "B",
+            hint_en: "Learning should be engaging and relevant.",
+            hint_te: "అభ్యసనం ఆకట్టుకునేలా మరియు సంబంధితంగా ఉండాలి.",
+            exp_en: "Section 29(1) emphasizes that the curriculum should provide a child-centered, activity-based approach that connects learning to real life.",
+            exp_te: "సెక్షన్ 29(1) పాఠ్యప్రణాళిక పిల్లల-కేంద్రిత, కార్యాచరణ-ఆధారిత విధానాన్ని అందించాలని మరియు అభ్యసనాన్ని నిజ జీవితానికి అనుసంధానించాలని నొక్కి చెబుతుంది."
+        }, {
+            id: 6,
+            q_en: "According to Gardner, the ability to appreciate and produce music, and to recognize patterns in sound, is known as:",
+            q_te: "గార్డనర్ ప్రకారం, సంగీతాన్ని ఆస్వాదించే మరియు ఉత్పత్తి చేసే సామర్థ్యం, మరియు శబ్దంలో నమూనాలను గుర్తించడం, దేనిని అంటారు?",
+            options: [
+                { id: "A", en: "Spatial Intelligence", te: "ప్రాదేశిక ప్రజ్ఞ" },
+                { id: "B", en: "Musical Intelligence", te: "సంగీత ప్రజ్ఞ (Musical Intelligence)" },
+                { id: "C", en: "Bodily-Kinesthetic Intelligence", te: "శారీరక-చలన ప్రజ్ఞ" },
+                { id: "D", en: "Interpersonal Intelligence", te: "అంతర్వ్యక్తిగత ప్రజ్ఞ" }
+            ],
+            answer: "B",
+            hint_en: "Sensitivity to pitch, tone, and rhythm.",
+            hint_te: "పిచ్, స్వరం మరియు లయకు సున్నితత్వం.",
+            exp_en: "Musical intelligence involves the capacity to recognize, create, and appreciate musical patterns, rhythms, and tones.",
+            exp_te: "సంగీత ప్రజ్ఞ సంగీత నమూనాలు, లయలు మరియు స్వరాలను గుర్తించడం, సృష్టించడం మరియు ఆస్వాదించడం వంటి సామర్థ్యాలను కలిగి ఉంటుంది."
+        }, {
+            id: 7,
+            q_en: "NCF 2005 advocates for the principle that 'knowledge is constructed by the learner', which implies:",
+            q_te: "NCF 2005 'జ్ఞానం అభ్యాసకుడిచే నిర్మించబడుతుంది' అనే సూత్రాన్ని సమర్థిస్తుంది, దీని అర్థం ఏమిటి?",
+            options: [
+                { id: "A", en: "Students passively receive knowledge from the teacher.", te: "విద్యార్థులు ఉపాధ్యాయుడి నుండి జ్ఞానాన్ని నిష్క్రియంగా పొందుతారు." },
+                { id: "B", en: "Students actively engage with content to build their own understanding.", te: "విద్యార్థులు వారి స్వంత అవగాహనను నిర్మించడానికి కంటెంట్‌తో చురుకుగా నిమగ్నమవుతారు." },
+                { id: "C", en: "Learning is only about memorizing facts.", te: "అభ్యసనం కేవలం వాస్తవాలను గుర్తుంచుకోవడం మాత్రమే." },
+                { id: "D", en: "Teachers should only lecture.", te: "ఉపాధ్యాయులు కేవలం ఉపన్యాసం ఇవ్వాలి." }
+            ],
+            answer: "B",
+            hint_en: "Learners build knowledge through active participation.",
+            hint_te: "అభ్యాసకులు చురుకైన భాగస్వామ్యం ద్వారా జ్ఞానాన్ని నిర్మిస్తారు.",
+            exp_en: "Constructivism, a core principle of NCF 2005, emphasizes that learners actively construct their own knowledge through experiences and interactions.",
+            exp_te: "నిర్మాణవాదం, NCF 2005 యొక్క ప్రధాన సూత్రం, అభ్యాసకులు అనుభవాలు మరియు పరస్పర చర్యల ద్వారా తమ స్వంత జ్ఞానాన్ని చురుకుగా నిర్మించుకుంటారని నొక్కి చెబుతుంది."
+        }, {
+            id: 8,
+            q_en: "In Operant Conditioning, a schedule where reinforcement is given after a fixed number of responses is called:",
+            q_te: "కార్యసాధక నిబంధనలో, ఒక నిర్ణీత సంఖ్యలో ప్రతిస్పందనల తర్వాత పునర్బలనం ఇవ్వబడే షెడ్యూల్‌ను ఏమంటారు?",
+            options: [
+                { id: "A", en: "Fixed Ratio Schedule", te: "స్థిర నిష్పత్తి షెడ్యూల్ (Fixed Ratio Schedule)" },
+                { id: "B", en: "Variable Ratio Schedule", te: "వేరియబుల్ నిష్పత్తి షెడ్యూల్" },
+                { id: "C", en: "Fixed Interval Schedule", te: "స్థిర విరామ షెడ్యూల్" },
+                { id: "D", en: "Variable Interval Schedule", te: "వేరియబుల్ విరామ షెడ్యూల్" }
+            ],
+            answer: "A",
+            hint_en: "Reward after a specific number of correct actions.",
+            hint_te: "నిర్దిష్ట సంఖ్యలో సరైన చర్యల తర్వాత బహుమతి.",
+            exp_en: "Fixed Ratio (FR) schedules provide reinforcement after a set number of responses, producing high and steady rates of responding.",
+            exp_te: "స్థిర నిష్పత్తి (FR) షెడ్యూల్స్ ఒక నిర్ణీత సంఖ్యలో ప్రతిస్పందనల తర్వాత పునర్బలనాన్ని అందిస్తాయి, ఇవి అధిక మరియు స్థిరమైన ప్రతిస్పందన రేట్లను ఉత్పత్తి చేస్తాయి."
+        }, {
+            id: 9,
+            q_en: "Bandura suggested that self-efficacy can be developed through:",
+            q_te: "బండూరా స్వయం-సామర్థ్యం దేని ద్వారా అభివృద్ధి చేయవచ్చని సూచించాడు?",
+            options: [
+                { id: "A", en: "Observing others fail.", te: "ఇతరులు విఫలమవడాన్ని గమనించడం." },
+                { id: "B", en: "Mastery experiences (successful performances).", te: "నైపుణ్య అనుభవాలు (విజయవంతమైన ప్రదర్శనలు)." },
+                { id: "C", en: "Negative feedback.", te: "ప్రతికూల అభిప్రాయం." },
+                { id: "D", en: "Ignoring challenges.", te: "సవాళ్లను విస్మరించడం." }
+            ],
+            answer: "B",
+            hint_en: "Success builds a strong sense of capability.",
+            hint_te: "విజయం బలమైన సామర్థ్య భావాన్ని నిర్మిస్తుంది.",
+            exp_en: "Mastery experiences are the most powerful source of self-efficacy, as successfully completing a task reinforces confidence.",
+            exp_te: "నైపుణ్య అనుభవాలు స్వయం-సామర్థ్యం యొక్క అత్యంత శక్తివంతమైన మూలం, ఎందుకంటే ఒక పనిని విజయవంతంగా పూర్తి చేయడం విశ్వాసాన్ని పెంపొందిస్తుంది."
+        }, {
+            id: 10,
+            q_en: "In Bloom's Revised Taxonomy (2001), which level represents the highest cognitive skill, involving the creation of new ideas or products?",
+            q_te: "బ్లూమ్ యొక్క సవరించిన టాక్సానమీ (2001) లో, కొత్త ఆలోచనలు లేదా ఉత్పత్తులను సృష్టించడాన్ని కలిగి ఉన్న అత్యున్నత సంజ్ఞానాత్మక నైపుణ్యాన్ని ఏ స్థాయి సూచిస్తుంది?",
+            options: [
+                { id: "A", en: "Analyze", te: "విశ్లేషించడం" },
+                { id: "B", en: "Evaluate", te: "మూల్యాంకనం చేయడం" },
+                { id: "C", en: "Create", te: "సృష్టించడం (Create)" },
+                { id: "D", en: "Remember", te: "గుర్తుంచుకోవడం" }
+            ],
+            answer: "C",
+            hint_en: "Generating new products or ideas.",
+            hint_te: "కొత్త ఉత్పత్తులు లేదా ఆలోచనలను ఉత్పత్తి చేయడం.",
+            exp_en: "In the revised taxonomy, 'Create' is the highest level, involving putting elements together to form a new, coherent whole.",
+            exp_te: "సవరించిన టాక్సానమీలో, 'సృష్టించడం' అత్యున్నత స్థాయి, ఇది కొత్త, సుసంగతమైన మొత్తాన్ని ఏర్పరచడానికి అంశాలను కలిపి ఉంచడాన్ని కలిగి ఉంటుంది."
+        }, {
+            id: 11,
+            q_en: "A student who has severe difficulty understanding sequences, time, and money concepts, but has normal reading skills, likely has:",
+            q_te: "క్రమం, సమయం మరియు డబ్బు భావనలను అర్థం చేసుకోవడంలో తీవ్ర ఇబ్బంది ఉన్న, కానీ సాధారణ పఠన నైపుణ్యాలు ఉన్న విద్యార్థికి ఏమి ఉండవచ్చు?",
+            options: [
+                { id: "A", en: "Dyslexia", te: "డిస్లెక్సియా" },
+                { id: "B", en: "Dyscalculia", te: "డిస్కాలిక్యులియా (Dyscalculia)" },
+                { id: "C", en: "Dysgraphia", te: "డిస్గ్రాఫియా" },
+                { id: "D", en: "ADHD", te: "ADHD" }
+            ],
+            answer: "B",
+            hint_en: "A learning disability specifically related to numerical and mathematical concepts.",
+            hint_te: "సంఖ్యా మరియు గణిత భావనలకు ప్రత్యేకించి సంబంధించిన అభ్యసన వైకల్యం.",
+            exp_en: "Dyscalculia is a learning disability that affects mathematical understanding, number sense, and the ability to comprehend time and sequencing.",
+            exp_te: "డిస్కాలిక్యులియా అనేది గణిత అవగాహన, సంఖ్యా జ్ఞానం, మరియు సమయం మరియు క్రమాన్ని అర్థం చేసుకునే సామర్థ్యాన్ని ప్రభావితం చేసే అభ్యసన వైకల్యం."
+        }, {
+            id: 12,
+            q_en: "NEP 2020 proposes that the 'Secondary Stage' (Classes 9-12) should focus on:",
+            q_te: "NEP 2020 'ద్వితీయ దశ' (9-12 తరగతులు) దేనిపై దృష్టి పెట్టాలని ప్రతిపాదిస్తుంది?",
+            options: [
+                { id: "A", en: "Play-based activities.", te: "ఆట-ఆధారిత కార్యకలాపాలు." },
+                { id: "B", en: "Multidisciplinary learning and critical thinking, with flexibility in subject choices.", te: "బహుళ-విషయ అభ్యసనం మరియు విమర్శనాత్మక ఆలోచన, సబ్జెక్ట్ ఎంపికలలో వశ్యతతో." },
+                { id: "C", en: "Only vocational training.", te: "కేవలం వృత్తి శిక్షణ మాత్రమే." },
+                { id: "D", en: "Memorizing facts for board exams.", te: "బోర్డు పరీక్షల కోసం వాస్తవాలను గుర్తుంచుకోవడం." }
+            ],
+            answer: "B",
+            hint_en: "Greater flexibility and deeper learning.",
+            hint_te: "ఎక్కువ వశ్యత మరియు లోతైన అభ్యసనం.",
+            exp_en: "The Secondary Stage in NEP 2020 (Classes 9-12) emphasizes multidisciplinary education, critical thinking, and student choice in subjects.",
+            exp_te: "NEP 2020 లోని ద్వితీయ దశ (9-12 తరగతులు) బహుళ-విషయ విద్య, విమర్శనాత్మక ఆలోచన, మరియు సబ్జెక్టులలో విద్యార్థి ఎంపికను నొక్కి చెబుతుంది."
+        }, {
+            id: 13,
+            q_en: "The primary purpose of a 'Diagnostic Test' is to:",
+            q_te: "'లోప నిర్ధారణ పరీక్ష' (Diagnostic Test) యొక్క ప్రాథమిక ఉద్దేశ్యం ఏమిటి?",
+            options: [
+                { id: "A", en: "Rank students based on performance.", te: "పనితీరు ఆధారంగా విద్యార్థులను ర్యాంక్ చేయడం." },
+                { id: "B", en: "Identify learning gaps and misconceptions to plan remedial teaching.", te: "నివారణ బోధనను ప్లాన్ చేయడానికి అభ్యసన అంతరాలు మరియు తప్పు భావనలను గుర్తించడం." },
+                { id: "C", en: "Certify student achievement at the end of the year.", te: "సంవత్సరం చివరిలో విద్యార్థి సాధనను సర్టిఫై చేయడం." },
+                { id: "D", en: "Promote students to the next grade.", te: "విద్యార్థులను తదుపరి తరగతికి ప్రమోట్ చేయడం." }
+            ],
+            answer: "B",
+            hint_en: "Finding out what students don't know, and why.",
+            hint_te: "విద్యార్థులకు ఏమి తెలియదు మరియు ఎందుకు అని కనుగొనడం.",
+            exp_en: "Diagnostic tests are used to pinpoint specific areas of weakness and misunderstanding, so that teachers can provide targeted remedial support.",
+            exp_te: "లోప నిర్ధారణ పరీక్షలు నిర్దిష్ట బలహీనతలు మరియు అపార్థాలను గుర్తించడానికి ఉపయోగించబడతాయి, తద్వారా ఉపాధ్యాయులు లక్ష్య నివారణ మద్దతును అందించగలరు."
+        }, {
+            id: 14,
+            q_en: "In Vygotsky's theory, the temporary support provided to help a child learn a new skill is known as:",
+            q_te: "వైగోట్స్కీ సిద్ధాంతంలో, పిల్లవాడు కొత్త నైపుణ్యాన్ని నేర్చుకోవడంలో సహాయపడటానికి అందించే తాత్కాలిక మద్దతును ఏమంటారు?",
+            options: [
+                { id: "A", en: "Scaffolding", te: "స్కాఫోల్డింగ్ (Scaffolding)" },
+                { id: "B", en: "Conditioning", te: "నిబంధనం" },
+                { id: "C", en: "Reinforcement", te: "పునర్బలనం" },
+                { id: "D", en: "Punishment", te: "శిక్ష" }
+            ],
+            answer: "A",
+            hint_en: "Support that is gradually removed as the child becomes more capable.",
+            hint_te: "పిల్లవాడు మరింత సామర్థ్యం పొందినప్పుడు క్రమంగా తొలగించబడే మద్దతు.",
+            exp_en: "Scaffolding refers to the temporary assistance provided by a teacher or peer to help a learner achieve a task they cannot do alone.",
+            exp_te: "స్కాఫోల్డింగ్ అనేది అభ్యాసకుడు ఒంటరిగా చేయలేని పనిని సాధించడానికి సహాయపడటానికి ఉపాధ్యాయుడు లేదా సహచరుడు అందించే తాత్కాలిక మద్దతును సూచిస్తుంది."
+        }, {
+            id: 15,
+            q_en: "Benjamin Bloom's 'Mastery Learning' strategy is based on the idea that:",
+            q_te: "బెంజమిన్ బ్లూమ్ యొక్క 'మాస్టరీ లెర్నింగ్' (Mastery Learning) వ్యూహం ఏ ఆలోచనపై ఆధారపడి ఉంది?",
+            options: [
+                { id: "A", en: "Only gifted students can achieve high levels of learning.", te: "ప్రతిభావంతులైన విద్యార్థులు మాత్రమే ఉన్నత స్థాయి అభ్యసనాన్ని సాధించగలరు." },
+                { id: "B", en: "Most students can master a subject if given enough time and appropriate instruction.", te: "తగినంత సమయం మరియు తగిన బోధన ఇచ్చినట్లయితే చాలా మంది విద్యార్థులు ఒక సబ్జెక్ట్‌లో నైపుణ్యం సాధించగలరు." },
+                { id: "C", en: "Students should be grouped by IQ.", te: "విద్యార్థులను IQ ద్వారా సమూహీకరించాలి." },
+                { id: "D", en: "Teachers should move through the curriculum at a fixed pace.", te: "ఉపాధ్యాయులు స్థిర వేగంతో పాఠ్యప్రణాళిక ద్వారా ముందుకు వెళ్లాలి." }
+            ],
+            answer: "B",
+            hint_en: "All students can learn, but with varying time and support.",
+            hint_te: "విద్యార్థులందరూ నేర్చుకోగలరు, కానీ విభిన్న సమయం మరియు మద్దతుతో.",
+            exp_en: "Mastery Learning assumes that 95% of students can achieve mastery if the instruction is high-quality and they are given sufficient time.",
+            exp_te: "మాస్టరీ లెర్నింగ్ బోధన అధిక-నాణ్యతతో ఉంటే మరియు విద్యార్థులకు తగినంత సమయం ఇస్తే 95% మంది విద్యార్థులు నైపుణ్యాన్ని సాధించగలరని భావిస్తుంది."
+        }, {
+            id: 16,
+            q_en: "A preschool child says, 'The wind is crying because it cannot find its home.' This is an example of Piaget's:",
+            q_te: "ఒక ప్రీ-స్కూల్ పిల్లవాడు 'గాలి ఏడుస్తోంది ఎందుకంటే అది దాని ఇంటిని కనుగొనలేకపోతోంది' అని చెప్పాడు. ఇది పియాజె యొక్క దేనికి ఉదాహరణ?",
+            options: [
+                { id: "A", en: "Animism", te: "సర్వాత్మక వాదం (Animism)" },
+                { id: "B", en: "Egocentrism", te: "అహంకేంద్రత" },
+                { id: "C", en: "Conservation", te: "సంరక్షణ" },
+                { id: "D", en: "Reversibility", te: "విపర్యాత్మక భావన" }
+            ],
+            answer: "A",
+            hint_en: "Giving human feelings to non-living things.",
+            hint_te: "నిర్జీవ వస్తువులకు మానవ భావోద్వేగాలను ఇవ్వడం.",
+            exp_en: "Animism is the attribution of life, consciousness, and emotions to inanimate objects, a hallmark of the pre-operational stage.",
+            exp_te: "సర్వాత్మక వాదం అనేది నిర్జీవ వస్తువులకు జీవం, చైతన్యం మరియు భావోద్వేగాలను ఆపాదించడం, ఇది పూర్వ ప్రచాలక దశ యొక్క లక్షణం."
+        }, {
+            id: 17,
+            q_en: "Lee Shulman's concept of PCK (Pedagogical Content Knowledge) is the intersection of:",
+            q_te: "లీ షుల్మాన్ యొక్క PCK (పెడగోగికల్ కంటెంట్ నాలెడ్జ్) భావన దేని యొక్క ఖండన?",
+            options: [
+                { id: "A", en: "Subject matter knowledge and general teaching strategies.", te: "విషయ జ్ఞానం మరియు సాధారణ బోధనా వ్యూహాలు." },
+                { id: "B", en: "Classroom management and assessment.", te: "తరగతి నిర్వహణ మరియు మూల్యాంకనం." },
+                { id: "C", en: "Psychology and sociology.", te: "మనోవిజ్ఞాన శాస్త్రం మరియు సామాజిక శాస్త్రం." },
+                { id: "D", en: "Curriculum and textbooks.", te: "పాఠ్యప్రణాళిక మరియు పాఠ్యపుస్తకాలు." }
+            ],
+            answer: "A",
+            hint_en: "Knowing how to teach specific content effectively.",
+            hint_te: "నిర్దిష్ట విషయాన్ని ఎలా సమర్ధవంతంగా బోధించాలో తెలుసుకోవడం.",
+            exp_en: "PCK is the unique blend of subject content knowledge and pedagogical knowledge that enables effective teaching.",
+            exp_te: "PCK అనేది విషయ కంటెంట్ జ్ఞానం మరియు బోధనా శాస్త్ర జ్ఞానం యొక్క ప్రత్యేక మిశ్రమం, ఇది సమర్ధవంతమైన బోధనను సాధ్యం చేస్తుంది."
+        }, {
+            id: 18,
+            q_en: "Which of the following is primarily a gross motor skill?",
+            q_te: "ఈ క్రింది వాటిలో ఏది ప్రధానంగా స్థూల మోటారు నైపుణ్యం?",
+            options: [
+                { id: "A", en: "Tying a shoelace", te: "షూలేస్ కట్టడం" },
+                { id: "B", en: "Writing with a pen", te: "పెన్నుతో రాయడం" },
+                { id: "C", en: "Throwing a ball", te: "బంతిని విసరడం (Throwing a ball)" },
+                { id: "D", en: "Buttoning a shirt", te: "చొక్కా బటన్ కట్టడం" }
+            ],
+            answer: "C",
+            hint_en: "Large muscle movements of the arms, legs, and torso.",
+            hint_te: "చేతులు, కాళ్లు మరియు మొండెం యొక్క పెద్ద కండరాల కదలికలు.",
+            exp_en: "Gross motor skills involve the large muscles of the body for activities like running, jumping, and throwing.",
+            exp_te: "స్థూల మోటారు నైపుణ్యాలు పరుగెత్తడం, దూకడం మరియు విసరడం వంటి కార్యకలాపాల కోసం శరీరం యొక్క పెద్ద కండరాలను కలిగి ఉంటాయి."
+        }, {
+            id: 19,
+            q_en: "The 'Jigsaw' classroom technique was developed by Elliot Aronson primarily to:",
+            q_te: "'జిగ్సా' క్లాస్‌రూమ్ టెక్నిక్‌ను ఎలియట్ ఆరాన్సన్ ప్రధానంగా దేని కోసం అభివృద్ధి చేశారు?",
+            options: [
+                { id: "A", en: "Increase competition among students.", te: "విద్యార్థుల మధ్య పోటీని పెంచడానికి." },
+                { id: "B", en: "Reduce prejudice and promote cooperation in diverse classrooms.", te: "వివిధ రకాల తరగతి గదులలో పక్షపాతాన్ని తగ్గించడానికి మరియు సహకారాన్ని ప్రోత్సహించడానికి." },
+                { id: "C", en: "Simplify the curriculum.", te: "పాఠ్యప్రణాళికను సరళీకృతం చేయడానికి." },
+                { id: "D", en: "Make grading easier.", te: "గ్రేడింగ్‌ను సులభతరం చేయడానికి." }
+            ],
+            answer: "B",
+            hint_en: "Cooperative learning to build interdependence.",
+            hint_te: "పరస్పర ఆధారపడటాన్ని నిర్మించడానికి సహకార అభ్యసనం.",
+            exp_en: "Aronson developed the Jigsaw method in 1971 to reduce racial conflict and foster a cooperative learning environment.",
+            exp_te: "ఆరాన్సన్ 1971లో జాతి సంఘర్షణను తగ్గించడానికి మరియు సహకార అభ్యసన వాతావరణాన్ని పెంపొందించడానికి జిగ్సా పద్ధతిని అభివృద్ధి చేశారు."
+        }, {
+            id: 20,
+            q_en: "In Cognitive Load Theory, the load that is inherent to the complexity of the material itself is known as:",
+            q_te: "సంజ్ఞానాత్మక భార సిద్ధాంతంలో, పదార్థం యొక్క సంక్లిష్టతకు స్వాభావికమైన భారాన్ని ఏమంటారు?",
+            options: [
+                { id: "A", en: "Intrinsic Cognitive Load", te: "స్వాభావిక సంజ్ఞానాత్మక భారం (Intrinsic Cognitive Load)" },
+                { id: "B", en: "Extraneous Cognitive Load", te: "బాహ్య సంజ్ఞానాత్మక భారం" },
+                { id: "C", en: "Germane Cognitive Load", te: "సార్థక సంజ్ఞానాత్మక భారం" },
+                { id: "D", en: "Total Cognitive Load", te: "మొత్తం సంజ్ఞానాత్మక భారం" }
+            ],
+            answer: "A",
+            hint_en: "The difficulty of the content itself.",
+            hint_te: "కంటెంట్ యొక్క కష్టతరత్వం.",
+            exp_en: "Intrinsic cognitive load is the complexity inherent in the learning material itself, which the learner must process.",
+            exp_te: "స్వాభావిక సంజ్ఞానాత్మక భారం అనేది అభ్యసన పదార్థంలోని సంక్లిష్టత, దీనిని అభ్యాసకుడు ప్రాసెస్ చేయాలి."
+        }, {
+            id: 21,
+            q_en: "A student who consistently says, 'I scored high because I studied hard' has a strong:",
+            q_te: "'నేను కష్టపడి చదివినందున నేను ఎక్కువ స్కోర్ సాధించాను' అని స్థిరంగా చెప్పే విద్యార్థికి బలమైన ఏమి ఉంటుంది?",
+            options: [
+                { id: "A", en: "External Locus of Control", te: "బాహ్య నియంత్రణ కేంద్రం" },
+                { id: "B", en: "Internal Locus of Control", te: "అంతర్గత నియంత్రణ కేంద్రం (Internal Locus of Control)" },
+                { id: "C", en: "Fixed Mindset", te: "స్థిర మనస్తత్వం" },
+                { id: "D", en: "Learned Helplessness", te: "నేర్చుకున్న నిస్సహాయత" }
+            ],
+            answer: "B",
+            hint_en: "Attributing success to personal effort.",
+            hint_te: "విజయాన్ని వ్యక్తిగత ప్రయత్నానికి ఆపాదించడం.",
+            exp_en: "Internal locus of control is the belief that one's own actions and efforts are the primary determinants of outcomes.",
+            exp_te: "అంతర్గత నియంత్రణ కేంద్రం అనేది తన స్వంత చర్యలు మరియు ప్రయత్నాలు ఫలితాల యొక్క ప్రాధమిక నిర్ణయాధికారాలు అనే నమ్మకం."
+        }, {
+            id: 22,
+            q_en: "The strategy of 'thinking about your own thinking' to improve learning is called:",
+            q_te: "అభ్యసనాన్ని మెరుగుపరచడానికి 'మీ స్వంత ఆలోచన గురించి ఆలోచించడం' అనే వ్యూహాన్ని ఏమంటారు?",
+            options: [
+                { id: "A", en: "Metacognition", te: "మెటాకాగ్నిషన్ (Metacognition)" },
+                { id: "B", en: "Rote Learning", te: "బట్టీ అభ్యసనం" },
+                { id: "C", en: "Classical Conditioning", te: "శాస్త్రీయ నిబంధనం" },
+                { id: "D", en: "Observational Learning", te: "పరిశీలనాత్మక అభ్యసనం" }
+            ],
+            answer: "A",
+            hint_en: "Self-awareness and reflection on one's cognitive processes.",
+            hint_te: "తన సంజ్ఞానాత్మక ప్రక్రియలపై స్వయం-అవగాహన మరియు ప్రతిబింబం.",
+            exp_en: "Metacognition involves being aware of and regulating one's own learning processes, such as planning, monitoring, and evaluating.",
+            exp_te: "మెటాకాగ్నిషన్ తన స్వంత అభ్యసన ప్రక్రియలను గురించి తెలుసుకోవడం మరియు నియంత్రించడం, ప్రణాళిక, పర్యవేక్షణ మరియు మూల్యాంకనం చేయడం."
+        }, {
+            id: 23,
+            q_en: "Under RTE Act 2009, what percentage of seats must be reserved in private unaided schools for children from disadvantaged groups?",
+            q_te: "RTE చట్టం 2009 కింద, ప్రైవేట్ అనైడెడ్ పాఠశాలలలో వెనుకబడిన సమూహాల పిల్లల కోసం ఎంత శాతం సీట్లు రిజర్వ్ చేయాలి?",
+            options: [
+                { id: "A", en: "10%", te: "10%" },
+                { id: "B", en: "15%", te: "15%" },
+                { id: "C", en: "20%", te: "20%" },
+                { id: "D", en: "25%", te: "25%" }
+            ],
+            answer: "D",
+            hint_en: "One-fourth of the total seats.",
+            hint_te: "మొత్తం సీట్లలో నాలుగింట ఒక వంతు.",
+            exp_en: "Section 12(1)(c) mandates that private unaided schools reserve 25% of seats for children from disadvantaged groups and weaker sections.",
+            exp_te: "సెక్షన్ 12(1)(c) ప్రైవేట్ అనైడెడ్ పాఠశాలలు వెనుకబడిన సమూహాలు మరియు బలహీన విభాగాల పిల్లల కోసం 25% సీట్లను రిజర్వ్ చేయాలని నిర్దేశిస్తుంది."
+        }, {
+            id: 24,
+            q_en: "Which type of assessment is typically used for grading and certification at the end of a term or course?",
+            q_te: "టర్మ్ లేదా కోర్సు చివరిలో గ్రేడింగ్ మరియు సర్టిఫికేషన్ కోసం సాధారణంగా ఏ రకమైన మూల్యాంకనం ఉపయోగించబడుతుంది?",
+            options: [
+                { id: "A", en: "Formative Assessment", te: "నిర్మాణాత్మక మూల్యాంకనం" },
+                { id: "B", en: "Summative Assessment", te: "సంగ్రహణాత్మక మూల్యాంకనం (Summative Assessment)" },
+                { id: "C", en: "Diagnostic Assessment", te: "లోప నిర్ధారణ మూల్యాంకనం" },
+                { id: "D", en: "Placement Assessment", te: "స్థాన నిర్ధారణ మూల్యాంకనం" }
+            ],
+            answer: "B",
+            hint_en: "End-of-term evaluation.",
+            hint_te: "టర్మ్ చివరి మూల్యాంకనం.",
+            exp_en: "Summative assessment measures student learning after instruction, used for assigning grades, promotion, or certification.",
+            exp_te: "సంగ్రహణాత్మక మూల్యాంకనం బోధన తర్వాత విద్యార్థి అభ్యసనాన్ని కొలుస్తుంది, గ్రేడ్‌లు కేటాయించడం, ప్రమోషన్ లేదా సర్టిఫికేషన్ కోసం ఉపయోగించబడుతుంది."
+        }, {
+            id: 25,
+            q_en: "According to Self-Determination Theory, which psychological need is satisfied when a student feels a sense of belonging with peers and teachers?",
+            q_te: "స్వయం-నిర్ణయ సిద్ధాంతం ప్రకారం, ఒక విద్యార్థి సహచరులు మరియు ఉపాధ్యాయులతో స్వంతం యొక్క భావాన్ని అనుభవించినప్పుడు ఏ మానసిక అవసరం సంతృప్తి చెందుతుంది?",
+            options: [
+                { id: "A", en: "Autonomy", te: "స్వయంప్రతిపత్తి" },
+                { id: "B", en: "Competence", te: "సామర్థ్యం" },
+                { id: "C", en: "Relatedness", te: "సంబంధం (Relatedness)" },
+                { id: "D", en: "Safety", te: "భద్రత" }
+            ],
+            answer: "C",
+            hint_en: "Feeling connected and valued by others.",
+            hint_te: "ఇతరులతో అనుసంధానంగా మరియు విలువైనదిగా అనుభూతి చెందడం.",
+            exp_en: "Relatedness is the need to feel connected to others, to belong, and to have meaningful social relationships.",
+            exp_te: "సంబంధం అనేది ఇతరులతో అనుసంధానంగా, స్వంతంగా, మరియు అర్థపూర్వక సామాజిక సంబంధాలను కలిగి ఉండటానికి అవసరం."
+        }, {
+            id: 26,
+            q_en: "A teacher removes a student's detention time after they complete their homework. This is an example of:",
+            q_te: "ఒక ఉపాధ్యాయుడు విద్యార్థి హోంవర్క్ పూర్తి చేసిన తర్వాత వారి డిటెన్షన్ సమయాన్ని తొలగిస్తాడు. ఇది దేనికి ఉదాహరణ?",
+            options: [
+                { id: "A", en: "Positive Reinforcement", te: "అనుకూల పునర్బలనం" },
+                { id: "B", en: "Negative Reinforcement", te: "ప్రతికూల పునర్బలనం (Negative Reinforcement)" },
+                { id: "C", en: "Positive Punishment", te: "అనుకూల శిక్ష" },
+                { id: "D", en: "Negative Punishment", te: "ప్రతికూల శిక్ష" }
+            ],
+            answer: "B",
+            hint_en: "Removing an aversive stimulus to increase a desired behavior.",
+            hint_te: "కావాల్సిన ప్రవర్తనను పెంచడానికి ప్రతికూల ఉద్దీపనను తొలగించడం.",
+            exp_en: "Negative reinforcement involves removing an unpleasant stimulus (detention) to increase the likelihood of a behavior (completing homework).",
+            exp_te: "ప్రతికూల పునర్బలనం అనేది ఒక ప్రవర్తన (హోంవర్క్ పూర్తి చేయడం) యొక్క సంభావ్యతను పెంచడానికి అసహ్యకరమైన ఉద్దీపనను (డిటెన్షన్) తొలగించడం."
+        }, {
+            id: 27,
+            q_en: "In a Flipped Classroom, what is the primary role of the teacher during class time?",
+            q_te: "ఫ్లిప్డ్ క్లాస్‌రూమ్‌లో, తరగతి సమయంలో ఉపాధ్యాయుడి ప్రాథమిక పాత్ర ఏమిటి?",
+            options: [
+                { id: "A", en: "Deliver a long lecture.", te: "పొడవైన ఉపన్యాసం ఇవ్వడం." },
+                { id: "B", en: "Facilitate active learning, guide discussions, and provide individual support.", te: "చురుకైన అభ్యసనాన్ని సులభతరం చేయడం, చర్చలకు మార్గదర్శనం చేయడం మరియు వ్యక్తిగత మద్దతును అందించడం." },
+                { id: "C", en: "Grade papers silently.", te: "నిశ్శబ్దంగా పేపర్లను గ్రేడ్ చేయడం." },
+                { id: "D", en: "Have students copy notes from the board.", te: "విద్యార్థులు బోర్డు నుండి నోట్స్ కాపీ చేసుకునేలా చేయడం." }
+            ],
+            answer: "B",
+            hint_en: "Class time is for practice, collaboration, and deeper inquiry.",
+            hint_te: "తరగతి సమయం ఆచరణ, సహకారం మరియు లోతైన విచారణ కోసం.",
+            exp_en: "The flipped classroom shifts the teacher's role from lecturer to facilitator, guiding students through active learning tasks during class.",
+            exp_te: "ఫ్లిప్డ్ క్లాస్‌రూమ్ ఉపాధ్యాయుడి పాత్రను ఉపన్యాసకుడి నుండి సులభతరం చేసేవారిగా మారుస్తుంది, తరగతి సమయంలో విద్యార్థులను చురుకైన అభ్యసన పనుల ద్వారా మార్గనిర్దేశం చేస్తుంది."
+        }, {
+            id: 28,
+            q_en: "The 'W' column in a K-W-L chart is completed before the lesson to record:",
+            q_te: "K-W-L చార్ట్‌లోని 'W' నిలువు వరుస పాఠానికి ముందు దేనిని నమోదు చేయడానికి పూర్తి చేయబడుతుంది?",
+            options: [
+                { id: "A", en: "What students already know.", te: "విద్యార్థులకు ఇప్పటికే ఏమి తెలుసు." },
+                { id: "B", en: "What students want to learn.", te: "విద్యార్థులు ఏమి నేర్చుకోవాలనుకుంటున్నారు." },
+                { id: "C", en: "What students learned after the lesson.", te: "పాఠం తర్వాత విద్యార్థులు ఏమి నేర్చుకున్నారు." },
+                { id: "D", en: "The teacher's name.", te: "ఉపాధ్యాయుడి పేరు." }
+            ],
+            answer: "B",
+            hint_en: "The 'Want to know' column sets learning goals.",
+            hint_te: "'తెలుసుకోవాలనుకుంటున్నాను' నిలువు వరుస అభ్యసన లక్ష్యాలను నిర్దేశిస్తుంది.",
+            exp_en: "The 'W' column stands for 'What I Want to Know', where students list questions they have about the topic before learning.",
+            exp_te: "'W' నిలువు వరుస 'నేను ఏమి తెలుసుకోవాలనుకుంటున్నాను' అని సూచిస్తుంది, ఇక్కడ విద్యార్థులు అభ్యసనానికి ముందు టాపిక్ గురించి వారికి ఉన్న ప్రశ్నలను జాబితా చేస్తారు."
+        }, {
+            id: 29,
+            q_en: "A child focuses only on the width of a piece of clay and ignores its height, believing the wider piece has more clay. This is an example of Piaget's:",
+            q_te: "ఒక పిల్లవాడు మట్టి ముక్క యొక్క వెడల్పుపై మాత్రమే దృష్టి పెట్టి దాని ఎత్తును విస్మరిస్తాడు, వెడల్పైన ముక్కలో ఎక్కువ మట్టి ఉందని నమ్ముతాడు. ఇది పియాజె యొక్క దేనికి ఉదాహరణ?",
+            options: [
+                { id: "A", en: "Centration", te: "కేంద్రీకరణం (Centration)" },
+                { id: "B", en: "Reversibility", te: "విపర్యాత్మక భావన" },
+                { id: "C", en: "Conservation", te: "సంరక్షణ" },
+                { id: "D", en: "Object Permanence", te: "వస్తు స్థిరత్వం" }
+            ],
+            answer: "A",
+            hint_en: "Focusing on only one dimension of an object.",
+            hint_te: "ఒక వస్తువు యొక్క ఒక కోణంపై మాత్రమే దృష్టి పెట్టడం.",
+            exp_en: "Centration is the tendency to focus on one salient aspect of a situation while ignoring other relevant aspects, common in the pre-operational stage.",
+            exp_te: "కేంద్రీకరణం అనేది ఒక పరిస్థితిలోని ఒక ప్రముఖ అంశంపై దృష్టి పెట్టడం మరియు ఇతర సంబంధిత అంశాలను విస్మరించడం, ఇది పూర్వ ప్రచాలక దశలో సాధారణం."
+        }, {
+            id: 30,
+            q_en: "According to Vygotsky, a child's 'private speech' (talking to oneself) serves the function of:",
+            q_te: "వైగోట్స్కీ ప్రకారం, పిల్లల 'ప్రైవేట్ స్పీచ్' (తనతో తాను మాట్లాడుకోవడం) ఏ పనిని నిర్వహిస్తుంది?",
+            options: [
+                { id: "A", en: "Guiding and regulating thought and behavior.", te: "ఆలోచన మరియు ప్రవర్తనకు మార్గదర్శనం చేయడం మరియు నియంత్రించడం." },
+                { id: "B", en: "Socializing with others.", te: "ఇతరులతో సాంఘికీకరణ." },
+                { id: "C", en: "Expressing emotions loudly.", te: "భావోద్వేగాలను బిగ్గరగా వ్యక్తీకరించడం." },
+                { id: "D", en: "Rehearsing for a test.", te: "పరీక్ష కోసం రిహార్సల్ చేయడం." }
+            ],
+            answer: "A",
+            hint_en: "Self-talk helps children plan and monitor their actions.",
+            hint_te: "స్వయం-మాట్లాడటం పిల్లలు వారి చర్యలను ప్లాన్ చేయడానికి మరియు పర్యవేక్షించడానికి సహాయపడుతుంది.",
+            exp_en: "Vygotsky argued that private speech is a critical tool for self-regulation and problem-solving, eventually becoming inner thought.",
+            exp_te: "ప్రైవేట్ స్పీచ్ స్వయం-నియంత్రణ మరియు సమస్య పరిష్కారానికి ఒక కీలక సాధనంగా పనిచేస్తుందని, చివరికి అంతర్గత ఆలోచనగా మారుతుందని వైగోట్స్కీ వాదించాడు."
+        }];
+
+        // ===================== RENDER =====================
+        const quizContainer = document.getElementById("quiz-container");
+
+        function loadQuestions() {
+            questionsData.forEach((q, index) => {
+                let opts = '';
+                q.options.forEach(opt => {
+                    opts += `
+                        <li>
+                            <label>
+                                <input type="radio" name="q${q.id}" value="${opt.id}">
+                                <b>${opt.id}.</b> ${opt.en} <br>
+                                <span style="color:#D84315;font-size:14px;margin-left:22px;">${opt.te}</span>
+                            </label>
+                        </li>
+                    `;
+                });
+
+                const card = `
+                    <div class="question-card" id="card-${q.id}">
+                        <div class="question-text">
+                            <div class="lang-en">Q${index+1}. ${q.q_en}</div>
+                            <div class="lang-te">ప్ర${index+1}. ${q.q_te}</div>
+                        </div>
+                        <ul class="options">${opts}</ul>
+                        <div class="btn-group no-print">
+                            <button class="btn-hint" onclick="showHint(${q.id})">💡 సూచన</button>
+                            <button class="btn-check" onclick="checkAnswer(${q.id},'${q.answer}')">✅ తనిఖీ</button>
+                        </div>
+                        <div id="feedback-${q.id}" class="feedback-box">
+                            <strong id="result-msg-${q.id}"></strong>
+                            <div class="explanation">
+                                <b style="color:#1B5E20;">Explanation:</b> ${q.exp_en} <br><br>
+                                <b style="color:#D84315;">వివరణ:</b> ${q.exp_te}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                quizContainer.innerHTML += card;
+            });
+        }
+
+        // ===================== HINT =====================
+        const hintModal = document.getElementById("hintModal");
+
+        function showHint(id) {
+            const q = questionsData.find(item => item.id === id);
+            document.getElementById("hintTextEn").innerText = q.hint_en;
+            document.getElementById("hintTextTe").innerText = q.hint_te;
+            hintModal.style.display = "block";
+        }
+
+        function closeHint() { hintModal.style.display = "none"; }
+
+        window.onclick = function(e) {
+            if (e.target == hintModal) hintModal.style.display = "none";
+        };
+
+        // ===================== CHECK =====================
+        function checkAnswer(id, correctAnswer) {
+            const selected = document.querySelector(`input[name="q${id}"]:checked`);
+            const box = document.getElementById(`feedback-${id}`);
+            const msg = document.getElementById(`result-msg-${id}`);
+
+            if (!selected) {
+                alert("దయచేసి ఒక ఆప్షన్ ఎంచుకోండి! / Please select an option!");
+                return;
+            }
+
+            box.style.display = "block";
+            if (selected.value === correctAnswer) {
+                box.className = "feedback-box correct";
+                msg.innerText = "🎉 సరైన సమాధానం! / Correct Answer!";
+            } else {
+                box.className = "feedback-box incorrect";
+                msg.innerText = `❌ తప్పు సమాధానం. సరైన ఆన్సర్ '${correctAnswer}'. / Incorrect. Correct answer is '${correctAnswer}'.`;
+            }
+        }
+
+        // ===================== TIMER (count-up 00:00 → 30:00) =====================
+        let timerSeconds = 0;
+        let timerInterval = null;
+        let isRunning = false;
+
+        const timerDisplay = document.getElementById("timerDisplay");
+        const btnStart = document.getElementById("btnStart");
+        const btnPause = document.getElementById("btnPause");
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(timerSeconds / 60);
+            const secs = timerSeconds % 60;
+            timerDisplay.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            if (timerSeconds >= 28 * 60) {
+                timerDisplay.classList.add("warning");
+            } else {
+                timerDisplay.classList.remove("warning");
+            }
+        }
+
+        function startTimer() {
+            if (isRunning) return;
+            if (timerSeconds >= 30 * 60) {
+                alert("సమయం ముగిసింది! / Time is up!");
+                return;
+            }
+            isRunning = true;
+            btnStart.disabled = true;
+            btnPause.disabled = false;
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                updateTimerDisplay();
+                if (timerSeconds >= 30 * 60) {
+                    clearInterval(timerInterval);
+                    isRunning = false;
+                    btnStart.disabled = true;
+                    btnPause.disabled = true;
+                    timerDisplay.classList.add("warning");
+                    alert("⏰ సమయం ముగిసింది! / Time is up!");
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            if (!isRunning) return;
+            clearInterval(timerInterval);
+            isRunning = false;
+            btnStart.disabled = false;
+            btnPause.disabled = true;
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            timerSeconds = 0;
+            updateTimerDisplay();
+            timerDisplay.classList.remove("warning");
+            btnStart.disabled = false;
+            btnPause.disabled = true;
+        }
+
+        // ===================== PRINT =====================
+        function printQuiz(mode) {
+            const container = document.getElementById("mainContainer");
+            const indicator = document.getElementById("modeIndicator");
+
+            container.classList.remove("print-student", "print-teacher");
+
+            if (mode === "student") {
+                container.classList.add("print-student");
+                indicator.textContent = "విద్యార్థి మోడ్";
+                indicator.className = "mode-indicator student";
+            } else {
+                container.classList.add("print-teacher");
+                indicator.textContent = "ఉపాధ్యాయ మోడ్";
+                indicator.className = "mode-indicator teacher";
+            }
+
+            setTimeout(() => {
+                window.print();
+            }, 300);
+        }
+
+        // ===================== INIT =====================
+        window.onload = function() {
+            loadQuestions();
+            updateTimerDisplay();
+        };
+    </script>
+
+</body>
+</html>

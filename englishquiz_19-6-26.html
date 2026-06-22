@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>APTET 2026 - English Language 2 |  (24+6) Timer+Print</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px 30px 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .header-section {
+            text-align: center;
+            background: linear-gradient(135deg, #0D47A1, #1A237E);
+            color: #fff;
+            padding: 18px 20px 14px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .home-link {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+        }
+        .home-link:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+        .header-section h1 { margin: 0; font-size: 28px; }
+        .header-section h2 { margin: 6px 0 2px; font-size: 22px; color: #FFEB3B; }
+        .header-section h3 { margin: 0; font-size: 18px; color: #B3C6FF; }
+        .badge-24 { background: #2E7D32; padding: 2px 12px; border-radius: 20px; font-size: 14px; margin: 0 4px; }
+        .badge-6 { background: #E65100; padding: 2px 12px; border-radius: 20px; font-size: 14px; margin: 0 4px; }
+
+        .timer-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: #E8EAF6;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 22px;
+            border: 1px solid #C5CAE9;
+        }
+        .timer-box { display: flex; align-items: center; gap: 14px; }
+        .timer-box span { font-weight: 600; font-size: 18px; color: #1A237E; }
+        #timerDisplay {
+            font-size: 38px; font-weight: 700; font-family: 'Courier New', monospace;
+            background: #1A237E; color: #fff; padding: 6px 18px; border-radius: 6px;
+            min-width: 100px; text-align: center;
+        }
+        #timerDisplay.warning { background: #E65100; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .timer-actions { display: flex; gap: 10px; }
+        .timer-actions button { padding: 8px 18px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        .btn-start { background: #2E7D32; color: #fff; }
+        .btn-start:hover { background: #1B5E20; }
+        .btn-start:disabled { background: #9E9E9E; cursor: not-allowed; }
+        .btn-pause { background: #F57F17; color: #fff; }
+        .btn-pause:hover { background: #E65100; }
+        .btn-pause:disabled { background: #9E9E9E; cursor: not-allowed; }
+        .btn-reset { background: #C62828; color: #fff; }
+        .print-controls { display: flex; gap: 10px; flex-wrap: wrap; }
+        .print-controls button { padding: 8px 18px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        .btn-print-student { background: #1565C0; color: #fff; }
+        .btn-print-teacher { background: #6A1B9A; color: #fff; }
+        .mode-indicator {
+            display: inline-block; padding: 4px 14px; border-radius: 20px;
+            font-size: 13px; font-weight: 700; background: #E0E0E0; margin-left: 6px;
+        }
+        .mode-indicator.student { background: #BBDEFB; color: #0D47A1; }
+        .mode-indicator.teacher { background: #E1BEE7; color: #4A148C; }
+
+        .question-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 22px;
+            background: #fafafa;
+        }
+        .question-card:hover { border-color: #90CAF9; }
+        .q-meta {
+            display: inline-block; font-size: 11px; font-weight: 700;
+            padding: 2px 10px; border-radius: 12px;
+            background: #e0e0e0; color: #333; margin-bottom: 8px;
+        }
+        .q-meta.content { background: #BBDEFB; color: #0D47A1; }
+        .q-meta.method { background: #FFE0B2; color: #E65100; }
+        .question-text {
+            font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #0D47A1;
+        }
+        .options { list-style: none; padding: 0; margin: 0 0 10px 0; }
+        .options li {
+            margin-bottom: 8px; padding: 10px 14px; background: #fff;
+            border: 1px solid #ccc; border-radius: 6px; cursor: pointer; transition: 0.2s;
+        }
+        .options li:hover { background: #E3F2FD; border-color: #64B5F6; }
+        .options li label { cursor: pointer; display: block; }
+        .options li input[type="radio"] { margin-right: 12px; accent-color: #1A237E; }
+        .btn-group { margin-top: 10px; display: flex; gap: 10px; }
+        .btn-group button { padding: 8px 16px; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; }
+        .btn-hint { background: #FFB300; color: #333; }
+        .btn-check { background: #2E7D32; color: #fff; }
+        .feedback-box {
+            margin-top: 12px; padding: 14px 16px; border-radius: 6px;
+            display: none; border: 1px solid transparent;
+        }
+        .feedback-box.correct { display: block; background: #E8F5E9; color: #1B5E20; border-color: #A5D6A7; }
+        .feedback-box.incorrect { display: block; background: #FFEBEE; color: #B71C1C; border-color: #EF9A9A; }
+        .explanation { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ccc; font-style: italic; }
+
+        .modal {
+            display: none; position: fixed; z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.55);
+        }
+        .modal-content {
+            background: #fff; margin: 12% auto; padding: 24px 28px;
+            border-radius: 10px; max-width: 550px; width: 90%; text-align: center; position: relative;
+        }
+        .modal-content .close { position: absolute; top: 10px; right: 18px; font-size: 30px; cursor: pointer; }
+        .modal-content h3 { color: #F57F17; }
+
+        .footer-section {
+            text-align: center; background: #EDE7F6; padding: 18px 20px;
+            border-radius: 10px; margin-top: 28px;
+        }
+        .footer-name { font-size: 20px; font-weight: 700; color: #311B92; }
+
+        @media print {
+            body { background: #fff; padding: 10px; }
+            .container { box-shadow: none; padding: 10px; max-width: 100%; }
+            .timer-controls, .btn-group, .print-controls, .timer-actions, .no-print { display: none !important; }
+            .question-card { border: 1px solid #ddd; page-break-inside: avoid; }
+            .options li input { display: none; }
+            .feedback-box { display: none !important; }
+            .print-teacher .feedback-box { display: block !important; }
+            .print-student .feedback-box { display: none !important; }
+            .modal { display: none; }
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 12px 14px; }
+            .timer-controls { flex-direction: column; align-items: stretch; gap: 12px; }
+            .timer-box { justify-content: center; }
+            .timer-actions, .print-controls { justify-content: center; }
+            #timerDisplay { font-size: 30px; min-width: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="mainContainer">
+    <div class="header-section">
+        <a class="home-link no-print" href="index.html">🏠 Home</a>
+        <h1>APTET 2026 – Paper II(A)</h1>
+        <h3> <span class="GRAND">GRAND TEST- 3</span>
+        <h2>English Language 2</h2>
+        <h3> <span class="badge-24">24 Content</span> + <span class="badge-6">6 Methodology</span> (Timer & Print)</h3>
+    </div>
+
+    <div class="timer-controls no-print">
+        <div class="timer-box">
+            <span>⏱ Timer</span>
+            <div id="timerDisplay">00:00</div>
+        </div>
+        <div class="timer-actions">
+            <button class="btn-start" id="btnStart" onclick="startTimer()">▶ Start</button>
+            <button class="btn-pause" id="btnPause" onclick="pauseTimer()" disabled>⏸ Pause</button>
+            <button class="btn-reset" onclick="resetTimer()">⟳ Reset</button>
+        </div>
+        <!-- <div class="print-controls">
+            <button class="btn-print-student" onclick="printQuiz('student')">🖨 Student Print (No Answers)</button>
+            <button class="btn-print-teacher" onclick="printQuiz('teacher')">📘 Teacher Print (With Answers)</button>
+            <span id="modeIndicator" class="mode-indicator student">Student mode</span>
+        </div> -->
+    </div>
+
+    <div id="quiz-container"></div>
+
+    <div class="footer-section">
+        <p><i>Prepared by</i></p>
+        <p class="footer-name">K. Muneeswara Reddy</p>
+        <!-- <p>SA (Maths) | ZPHS Gundeligunta, Tirupati Dist</p> -->
+    </div>
+</div>
+
+<div id="hintModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeHint()">&times;</span>
+        <h3>💡 Hint</h3>
+        <p id="hintText" style="color:#0D47A1; font-weight:bold;"></p>
+    </div>
+</div>
+
+<script>
+    // ===================== 30 MCQs (24 Content + 6 Methodology) DAY 11 =====================
+    const questionsData = [
+        // ========== CONTENT (24 Questions) ==========
+        { id:1, type:'content', q_en: "Choose the synonym of 'AMELIORATE'.", opts: ["A. Worsen", "B. Improve", "C. Decay", "D. Destroy"], ans: "B", hint: "Ameliorate means to make better.", exp: "'Ameliorate' means to improve or make better." },
+        { id:2, type:'content', q_en: "Antonym of 'VIVID'.", opts: ["A. Bright", "B. Clear", "C. Dull", "D. Colorful"], ans: "C", hint: "Vivid means bright and clear.", exp: "The opposite of vivid is dull or dim." },
+        { id:3, type:'content', q_en: "Idiom 'Beat about the bush' means:", opts: ["A. To be direct", "B. To avoid the main topic", "C. To hit hard", "D. To walk carefully"], ans: "B", hint: "Avoiding the point.", exp: "'Beat about the bush' means to avoid the main topic." },
+        { id:4, type:'content', q_en: "Phrasal verb: 'The proposal was ______ by the committee.'", opts: ["A. turned down", "B. turned up", "C. turned off", "D. turned on"], ans: "A", hint: "Rejected.", exp: "'Turned down' means rejected." },
+        { id:5, type:'content', q_en: "One word for 'A person who studies the origin of words'.", opts: ["A. Etymologist", "B. Philologist", "C. Linguist", "D. Lexicographer"], ans: "A", hint: "Studies word origins.", exp: "An etymologist studies the origin and history of words." },
+        { id:6, type:'content', q_en: "Fill: 'She ______ (wait) for two hours before the bus arrived.'", opts: ["A. waited", "B. had waited", "C. had been waiting", "D. has waited"], ans: "C", hint: "Past perfect continuous for duration before another past action.", exp: "'Had been waiting' is the past perfect continuous tense." },
+        { id:7, type:'content', q_en: "Passive: 'People speak English all over the world.'", opts: ["A. English is spoken all over the world.", "B. English was spoken all over the world.", "C. English has been spoken all over the world.", "D. English is being spoken all over the world."], ans: "A", hint: "Present simple passive.", exp: "is/am/are + V3 → 'is spoken'." },
+        { id:8, type:'content', q_en: "Indirect: He said, 'I will do it now.'", opts: ["A. He said that he will do it now.", "B. He said that he would do it then.", "C. He said that he would do it now.", "D. He said that he did it then."], ans: "B", hint: "will → would; now → then.", exp: "Indirect: 'He said that he would do it then.'" },
+        { id:9, type:'content', q_en: "Agreement: 'Neither the principal nor the teachers ______ present.'", opts: ["A. is", "B. was", "C. are", "D. has"], ans: "C", hint: "Verb agrees with the nearer subject (teachers).", exp: "Teachers (plural) → 'are'." },
+        { id:10, type:'content', q_en: "Modal: 'You ______ have told me earlier.' (obligation)", opts: ["A. must", "B. should", "C. would", "D. could"], ans: "B", hint: "Mild obligation or advice in the past.", exp: "'Should have' expresses a missed obligation or advice." },
+        { id:11, type:'content', q_en: "Preposition: 'He is addicted ______ smoking.'", opts: ["A. with", "B. to", "C. for", "D. in"], ans: "B", hint: "Addicted to something.", exp: "Correct collocation: 'addicted to'." },
+        { id:12, type:'content', q_en: "Conjunction: 'I waited ______ the bus arrived.'", opts: ["A. until", "B. unless", "C. although", "D. because"], ans: "A", hint: "Time marker.", exp: "'Until' means up to the time when." },
+        { id:13, type:'content', q_en: "Identify error: 'Neither of the two options are correct.'", opts: ["A. Neither", "B. of", "C. options", "D. are"], ans: "D", hint: "Neither is singular.", exp: "Should be 'is correct' (singular verb)." },
+        { id:14, type:'content', q_en: "Question tag: 'Have a cup of tea, ______ you?'", opts: ["A. will", "B. don't", "C. shall", "D. won't"], ans: "A", hint: "Imperative tag (positive command) takes 'will you'.", exp: "'Have a cup of tea, will you?' is the correct tag." },
+        { id:15, type:'content', q_en: "Change degree: 'She is the tallest girl in the class.' (Comparative)", opts: ["A. She is taller than any other girl in the class.", "B. She is taller than most girls.", "C. She is taller than all girls.", "D. She is the most tall."], ans: "A", hint: "Superlative to comparative.", exp: "Comparative: 'She is taller than any other girl in the class.'" },
+        { id:16, type:'content', q_en: "Identify the noun clause: 'I don't know where he lives.'", opts: ["A. I don't know", "B. where he lives", "C. he lives", "D. don't know"], ans: "B", hint: "Clause acting as object of 'know'.", exp: "'Where he lives' is a noun clause." },
+        { id:17, type:'content', q_en: "Which is an imperative sentence?", opts: ["A. She reads well.", "B. What a beautiful bird!", "C. Please sit down.", "D. Do you like coffee?"], ans: "C", hint: "Command or request.", exp: "Imperative sentences give orders, commands, or requests." },
+        { id:18, type:'content', q_en: "Convert to indirect: He said, 'Let's go for a walk.'", opts: ["A. He proposed that we should go for a walk.", "B. He said let's go.", "C. He suggested to go.", "D. He said that we go."], ans: "A", hint: "'Let's' in reported speech is often reported as 'proposed/suggested'.", exp: "Indirect: 'He proposed that we should go for a walk.'" },
+        { id:19, type:'content', q_en: "Which is a fricative sound?", opts: ["A. /p/", "B. /b/", "C. /s/", "D. /t/"], ans: "C", hint: "Continuous airflow with friction.", exp: "/s/ is a fricative; /p/,/b/,/t/ are plosives." },
+        { id:20, type:'content', q_en: "Syllables in 'BEAUTIFUL'.", opts: ["A. 2", "B. 3", "C. 4", "D. 5"], ans: "B", hint: "beau-ti-ful", exp: "3 syllables." },
+        { id:21, type:'content', q_en: "Stress pattern in 'BELOW'.", opts: ["A. First syllable", "B. Second syllable", "C. Equal", "D. None"], ans: "B", hint: "be-LOW", exp: "Primary stress on the second syllable." },
+        { id:22, type:'content', q_en: "Correct spelling:", opts: ["A. Concious", "B. Conscious", "C. Consious", "D. Consciou"], ans: "B", hint: "Commonly misspelled.", exp: "'Conscious' is the correct spelling." },
+        { id:23, type:'content', q_en: "Dictionary order: Which word comes FIRST?", opts: ["A. Kind", "B. King", "C. Kinship", "D. Kite"], ans: "A", hint: "Compare letter by letter.", exp: "Kind → King → Kinship → Kite." },
+        { id:24, type:'content', q_en: "Reading: 'The author's tone is satirical' means:", opts: ["A. Mocking or ironic", "B. Serious", "C. Happy", "D. Neutral"], ans: "A", hint: "Satire = mockery.", exp: "Satirical tone uses irony to mock or criticize." },
+
+        // ========== METHODOLOGY (6 Questions) ==========
+        { id:25, type:'method', q_en: "The primary goal of teaching English as a second language in India is:", opts: ["A. To memorize grammar rules", "B. To develop communicative competence", "C. To pass examinations", "D. To learn about literature"], ans: "B", hint: "Focus on real-life language use.", exp: "The main aim is communicative competence – using language effectively in real situations." },
+        { id:26, type:'method', q_en: "The 'Audio-Lingual Method' primarily emphasizes:", opts: ["A. Translation of texts", "B. Drill and pattern practice", "C. Creative writing", "D. Group discussions"], ans: "B", hint: "Repetition and drills.", exp: "The Audio-Lingual Method focuses on repetition, drills, and pattern practice." },
+        { id:27, type:'method', q_en: "According to NCF 2005, learning should be:", opts: ["A. Rote-based", "B. Constructive and meaningful", "C. Only exam-oriented", "D. Teacher-centered"], ans: "B", hint: "NCF 2005 promotes constructivism.", exp: "NCF 2005 emphasizes that learning should be constructive, meaningful, and learner-centered." },
+        { id:28, type:'method', q_en: "Summative assessment is primarily used to:", opts: ["A. Provide ongoing feedback", "B. Evaluate learning at the end of a unit", "C. Diagnose learning difficulties", "D. Motivate students daily"], ans: "B", hint: "Assessment of learning.", exp: "Summative assessment evaluates learning at the end of a course, unit, or term." },
+        { id:29, type:'method', q_en: "The 'Constructivist' approach in teaching English suggests that students:", opts: ["A. Learn by rote memorization", "B. Passively receive information", "C. Construct knowledge through experiences", "D. Only focus on grammar"], ans: "C", hint: "Learning by doing and building.", exp: "Constructivism emphasizes that learners actively construct knowledge through their experiences." },
+        { id:30, type:'method', q_en: "The main advantage of using 'ICT' in English language teaching is:", opts: ["A. It replaces the teacher", "B. It provides authentic language exposure and interactive practice", "C. It is only for advanced learners", "D. It increases the syllabus"], ans: "B", hint: "Technology brings real-world language.", exp: "ICT provides authentic materials (videos, audio, interactive exercises) that enhance exposure and practice." }
+    ];
+
+    // Render
+    const quizContainer = document.getElementById("quiz-container");
+    function loadQuestions() {
+        quizContainer.innerHTML = '';
+        questionsData.forEach((q, idx) => {
+            let optHtml = '';
+            q.opts.forEach(opt => {
+                let letter = opt.charAt(0);
+                let text = opt.substring(2);
+                optHtml += `
+                    <li>
+                        <label>
+                            <input type="radio" name="q${q.id}" value="${letter}">
+                            <b>${letter}.</b> ${text}
+                        </label>
+                    </li>
+                `;
+            });
+            const metaClass = q.type === 'content' ? 'content' : 'method';
+            const metaLabel = q.type === 'content' ? '📘 Content' : '📗 Methodology';
+            const card = `
+                <div class="question-card" id="card-${q.id}">
+                    <span class="q-meta ${metaClass}">${metaLabel}</span>
+                    <div class="question-text">Q${idx+1}. ${q.q_en}</div>
+                    <ul class="options">${optHtml}</ul>
+                    <div class="btn-group no-print">
+                        <button class="btn-hint" onclick="showHint(${q.id})">💡 Hint</button>
+                        <button class="btn-check" onclick="checkAnswer(${q.id},'${q.ans}')">✅ Check</button>
+                    </div>
+                    <div id="feedback-${q.id}" class="feedback-box">
+                        <strong id="result-msg-${q.id}"></strong>
+                        <div class="explanation"><b>Explanation:</b> ${q.exp}</div>
+                    </div>
+                </div>
+            `;
+            quizContainer.innerHTML += card;
+        });
+    }
+
+    // Hint modal
+    function showHint(id) {
+        const q = questionsData.find(item => item.id === id);
+        document.getElementById("hintText").innerText = q.hint;
+        document.getElementById("hintModal").style.display = "block";
+    }
+    function closeHint() {
+        document.getElementById("hintModal").style.display = "none";
+    }
+    window.onclick = function(e) {
+        if (e.target === document.getElementById("hintModal")) closeHint();
+    };
+
+    // Check answer
+    function checkAnswer(id, correct) {
+        const selected = document.querySelector(`input[name="q${id}"]:checked`);
+        const box = document.getElementById(`feedback-${id}`);
+        const msg = document.getElementById(`result-msg-${id}`);
+        if (!selected) {
+            alert("Please select an option first!");
+            return;
+        }
+        box.style.display = "block";
+        if (selected.value === correct) {
+            box.className = "feedback-box correct";
+            msg.innerText = "🎉 Correct!";
+        } else {
+            box.className = "feedback-box incorrect";
+            msg.innerText = `❌ Incorrect. Correct answer is '${correct}'.`;
+        }
+    }
+
+    // Timer (count-up from 0 to 30 min)
+    let timerSeconds = 0;
+    let timerInterval = null;
+    let isRunning = false;
+    const timerDisplay = document.getElementById("timerDisplay");
+    const btnStart = document.getElementById("btnStart");
+    const btnPause = document.getElementById("btnPause");
+
+    function updateTimerDisplay() {
+        let mins = Math.floor(timerSeconds / 60);
+        let secs = timerSeconds % 60;
+        timerDisplay.textContent = `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+        if (timerSeconds >= 28 * 60) timerDisplay.classList.add("warning");
+        else timerDisplay.classList.remove("warning");
+    }
+
+    function startTimer() {
+        if (isRunning) return;
+        if (timerSeconds >= 1800) {
+            alert("Time is up! Quiz completed.");
+            return;
+        }
+        isRunning = true;
+        btnStart.disabled = true;
+        btnPause.disabled = false;
+        timerInterval = setInterval(() => {
+            timerSeconds++;
+            updateTimerDisplay();
+            if (timerSeconds >= 1800) {
+                clearInterval(timerInterval);
+                isRunning = false;
+                btnStart.disabled = true;
+                btnPause.disabled = true;
+                timerDisplay.classList.add("warning");
+                alert("⏰ Time's up! 30 minutes completed.");
+            }
+        }, 1000);
+    }
+
+    function pauseTimer() {
+        if (!isRunning) return;
+        clearInterval(timerInterval);
+        isRunning = false;
+        btnStart.disabled = false;
+        btnPause.disabled = true;
+    }
+
+    function resetTimer() {
+        clearInterval(timerInterval);
+        isRunning = false;
+        timerSeconds = 0;
+        updateTimerDisplay();
+        timerDisplay.classList.remove("warning");
+        btnStart.disabled = false;
+        btnPause.disabled = true;
+    }
+
+    // Print modes
+    function printQuiz(mode) {
+        const container = document.getElementById("mainContainer");
+        const indicator = document.getElementById("modeIndicator");
+        container.classList.remove("print-student", "print-teacher");
+        if (mode === "student") {
+            container.classList.add("print-student");
+            indicator.textContent = "Student mode";
+            indicator.className = "mode-indicator student";
+        } else {
+            container.classList.add("print-teacher");
+            indicator.textContent = "Teacher mode";
+            indicator.className = "mode-indicator teacher";
+        }
+        setTimeout(() => window.print(), 200);
+    }
+
+    // Initialize
+    window.onload = () => {
+        loadQuestions();
+        updateTimerDisplay();
+    };
+</script>
+</body>
+</html>

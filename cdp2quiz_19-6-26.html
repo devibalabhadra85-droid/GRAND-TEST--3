@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APTET 2026 - CDP | SURESHMATHSMATERIAL | Quiz-11</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3e5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Quiz 11 Theme: Deep Purple and Amber */
+        .header-section {
+            text-align: center;
+            background: linear-gradient(135deg, #4527A0, #311B92);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .home-link {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+        }
+        .home-link:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+        .header-section h1 { margin: 0; font-size: 28px; font-weight: bold; }
+        .header-section h2 { margin: 10px 0 5px 0; font-size: 22px; color: #FFC107; }
+        .header-section h3 { margin: 0; font-size: 18px; color: #D1C4E9; font-weight: normal; }
+        .date-badge {
+            background-color: #FFC107;
+            color: #311B92;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .footer-section {
+            text-align: center;
+            background-color: #EDE7F6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid #B39DDB;
+            color: #311B92;
+            line-height: 1.6;
+        }
+        .footer-section p { margin: 2px 0; font-size: 16px; }
+        .footer-name { font-size: 20px; font-weight: bold; color: #4527A0; margin-bottom: 5px !important;}
+
+        .question-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #fafafa;
+        }
+        .question-text {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .lang-en { color: #283593; margin-bottom: 5px; }
+        .lang-te { color: #C62828; margin-bottom: 15px; }
+        
+        .options { list-style-type: none; padding: 0; }
+        .options li {
+            margin-bottom: 10px; padding: 10px; background: #fff;
+            border: 1px solid #ccc; border-radius: 5px; cursor: pointer; transition: 0.3s;
+        }
+        .options li:hover { background: #EDE7F6; }
+        input[type="radio"] { margin-right: 10px; cursor: pointer; }
+        
+        .btn-group { margin-top: 15px; display: flex; gap: 10px; }
+        button {
+            padding: 10px 15px; border: none; border-radius: 5px; font-size: 14px;
+            cursor: pointer; font-weight: bold; transition: 0.3s;
+        }
+        .btn-hint { background-color: #FFC107; color: #311B92; }
+        .btn-hint:hover { background-color: #FFA000; }
+        .btn-check { background-color: #43A047; color: white; }
+        .btn-check:hover { background-color: #2E7D32; }
+
+        .feedback-box {
+            margin-top: 15px; padding: 15px; border-radius: 5px; display: none; font-size: 15px;
+        }
+        .correct { background-color: #E8F5E9; color: #2E7D32; border: 1px solid #C8E6C9; }
+        .incorrect { background-color: #FFEBEE; color: #C62828; border: 1px solid #FFCDD2; }
+        
+        .explanation { margin-top: 10px; font-style: italic; border-top: 1px solid #ccc; padding-top: 10px; }
+
+        .modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.6);
+        }
+        .modal-content {
+            background-color: #fff; margin: 15% auto; padding: 20px;
+            border: 1px solid #888; width: 60%; border-radius: 8px; text-align: center;
+        }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: black; }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .modal-content { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="header-section">
+        <a class="home-link no-print" href="index.html">🏠 Home</a>
+        <h1>APTET 2026 - CDP</h1>
+        <h2>SURESHMATHSMATERIAL</h2>
+        <!-- <h3>GRAND TEST 3</h3> -->
+        <div class="date-badge">GRAND TEST- 3</div>
+    </div>
+
+    <div id="quiz-container"></div>
+
+    <div class="footer-section">
+        <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 10px;"><i>Prepared & Developed by</i></p>
+        <p class="footer-name">K. Muneeswara Reddy</p>
+        <!-- <p><b>SA (Maths)</b></p>
+        <p>ZPHS Gundeligunta</p>
+        <p>Tirupati dist</p> -->
+    </div>
+
+</div>
+
+<div id="hintModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeHint()">&times;</span>
+        <h3 style="color:#FFC107;">💡 Hint / సూచన</h3>
+        <p id="hintTextEn" class="lang-en" style="font-weight:bold;"></p>
+        <p id="hintTextTe" class="lang-te" style="font-weight:bold;"></p>
+    </div>
+</div>
+
+<script>
+    const questionsData = [
+        {
+            id: 1,
+            q_en: "A child who knows that dogs have four legs sees a cow for the first time and calls it a 'big dog'. Later, the child learns to call it a 'cow'. According to Piaget, the process of modifying existing knowledge is called:",
+            q_te: "కుక్కకు నాలుగు కాళ్లు ఉంటాయని తెలిసిన పిల్లవాడు, మొదటిసారి ఆవును చూసి 'పెద్ద కుక్క' అంటాడు. తరువాత దానిని 'ఆవు' అని పిలవడం నేర్చుకుంటాడు. పియాజె ప్రకారం, ఈ జ్ఞానాన్ని నవీకరించే/మార్చుకునే ప్రక్రియను ఏమంటారు?",
+            options: [
+                { id: "A", en: "Assimilation", te: "సాంశీకరణం (Assimilation)" },
+                { id: "B", en: "Accommodation", te: "అనుగుణ్యం (Accommodation)" },
+                { id: "C", en: "Equilibration", te: "సమతుల్యత" },
+                { id: "D", en: "Object Permanence", te: "వస్తు స్థిరత్వం" }
+            ],
+            answer: "B",
+            hint_en: "Changing the existing schema to fit new information.", hint_te: "కొత్త సమాచారానికి అనుగుణంగా పాత జ్ఞానాన్ని (స్కీమాను) మార్చుకోవడం.",
+            exp_en: "Accommodation is the cognitive process of altering one's existing schemas as a result of new information or experiences (e.g., differentiating a cow from a dog).", 
+            exp_te: "పాత జ్ఞానాన్ని (కుక్క) మార్చుకుని, ఆవుకు కొత్త భావన (స్కీమా) ఏర్పరుచుకోవడాన్ని 'అనుగుణ్యం' అంటారు."
+        },
+        {
+            id: 2,
+            q_en: "A teacher provides a partially completed graphic organizer to help students write an essay. As students become more capable, the teacher provides less help. This instructional support is an example of:",
+            q_te: "వ్యాసం రాయడంలో విద్యార్థులకు సహాయపడటానికి ఉపాధ్యాయుడు పాక్షికంగా పూర్తి చేసిన గ్రాఫిక్ ఆర్గనైజర్‌ను అందిస్తాడు. విద్యార్థుల సామర్థ్యం పెరిగేకొద్దీ, ఉపాధ్యాయుడు సహాయాన్ని తగ్గిస్తాడు. ఈ బోధనా మద్దతు దేనికి ఉదాహరణ?",
+            options: [
+                { id: "A", en: "Conditioning", te: "నిబంధనం" },
+                { id: "B", en: "Scaffolding", te: "మరకట్టుట (Scaffolding)" },
+                { id: "C", en: "Positive Reinforcement", te: "అనుకూల పునర్బలనం" },
+                { id: "D", en: "Classical Conditioning", te: "శాస్త్రీయ నిబంధనం" }
+            ],
+            answer: "B",
+            hint_en: "Temporary support given by a More Knowledgeable Other (MKO).", hint_te: "పని పూర్తయ్యే వరకు మాత్రమే ఇచ్చే తాత్కాలిక మద్దతు.",
+            exp_en: "Scaffolding refers to a teaching method where the educator provides temporary support to students and gradually removes it as students develop competence.", 
+            exp_te: "వైగోట్స్కీ సిద్ధాంతం ప్రకారం, విద్యార్థి సొంతంగా పని చేయగలిగే స్థాయికి వచ్చే వరకు ఉపాధ్యాయుడు అందించే తాత్కాలిక మద్దతును స్కాఫోల్డింగ్ అంటారు."
+        },
+        {
+            id: 3,
+            q_en: "A student feels extreme anger towards his strict father but does not show it. Instead, he goes to school and picks a fight with a weaker classmate. Which defense mechanism is this?",
+            q_te: "ఒక విద్యార్థి తన కఠినమైన తండ్రి పట్ల విపరీతమైన కోపాన్ని కలిగి ఉంటాడు, కానీ దానిని చూపించడు. బదులుగా, అతను పాఠశాలకు వెళ్లి బలహీనమైన తోటి విద్యార్థితో గొడవ పడతాడు. ఇది ఏ రక్షక తంత్రం?",
+            options: [
+                { id: "A", en: "Projection", te: "ప్రక్షేపణం" },
+                { id: "B", en: "Rationalization", te: "హేతుబద్ధీకరణ" },
+                { id: "C", en: "Displacement", te: "విస్థాపనం (Displacement)" },
+                { id: "D", en: "Regression", te: "ప్రతిగమనం" }
+            ],
+            answer: "C",
+            hint_en: "Redirecting feelings to a less threatening target.", hint_te: "కోపాన్ని బలహీనులపై చూపించడం.",
+            exp_en: "Displacement is a psychological defense mechanism in which negative feelings are transferred from the original source of the emotion to a less threatening person or object.", 
+            exp_te: "ఒకరిపై (తండ్రిపై) ఉన్న కోపాన్ని, ఏమీ చేయలేని మరొకరిపై (బలహీనమైన స్నేహితునిపై) చూపించడాన్ని మనోవిజ్ఞాన శాస్త్రంలో 'విస్థాపనం' అంటారు."
+        },
+        {
+            id: 4,
+            q_en: "According to the National Education Policy (NEP) 2020, learning should be:",
+            q_te: "జాతీయ విద్యా విధానం (NEP) 2020 ప్రకారం, అభ్యసనం ఎలా ఉండాలి?",
+            options: [
+                { id: "A", en: "Textbook-centric and rote-based", te: "పాఠ్యపుస్తక-కేంద్రీకృత మరియు బట్టీ ఆధారితమైనది" },
+                { id: "B", en: "Experiential, holistic, and integrated", te: "అనుభవాత్మక, సమగ్ర మరియు సమీకృతమైనది (Experiential, holistic, and integrated)" },
+                { id: "C", en: "Focused only on passing standardized exams", te: "ప్రామాణిక పరీక్షలలో ఉత్తీర్ణత సాధించడంపై మాత్రమే దృష్టి పెట్టడం" },
+                { id: "D", en: "Strictly confined to classroom walls", te: "తరగతి గది గోడలకే ఖచ్చితంగా పరిమితం చేయబడటం" }
+            ],
+            answer: "B",
+            hint_en: "Learning by doing in all domains of development.", hint_te: "అన్ని రంగాల అభివృద్ధి మరియు అనుభవాల ద్వారా నేర్చుకోవడం.",
+            exp_en: "NEP 2020 emphasizes that education must move towards less rote learning and more towards experiential, holistic, integrated, inquiry-driven, and enjoyable learning.", 
+            exp_te: "పిల్లల సర్వతోముఖాభివృద్ధికి (Holistic) తోడ్పడేలా, ప్రత్యక్ష అనుభవాల ద్వారా (Experiential) విద్య ఉండాలని NEP 2020 సూచించింది."
+        },
+        {
+            id: 5,
+            q_en: "In Lawrence Kohlberg's theory, an individual at the 'Post-conventional' level of moral development makes decisions based on:",
+            q_te: "లారెన్స్ కోల్బర్గ్ సిద్ధాంతంలో, నైతిక వికాసంలో 'ఉత్తర-సాంప్రదాయక' (Post-conventional) స్థాయిలో ఉన్న వ్యక్తి దేని ఆధారంగా నిర్ణయాలు తీసుకుంటాడు?",
+            options: [
+                { id: "A", en: "Fear of punishment", te: "శిక్ష పట్ల భయం" },
+                { id: "B", en: "Desire to maintain social order and laws", te: "సామాజిక క్రమం మరియు చట్టాలను కాపాడాలనే కోరిక" },
+                { id: "C", en: "Internalized universal ethical principles of justice and human rights", te: "అంతర్గతీకరించబడిన సార్వత్రిక నైతిక సూత్రాలు మరియు మానవ హక్కులు" },
+                { id: "D", en: "Seeking approval from peers", te: "తోటివారి నుండి ఆమోదం (మెప్పు) కోరడం" }
+            ],
+            answer: "C",
+            hint_en: "The highest level of morality.", hint_te: "నైతికతలో అత్యున్నత స్థాయి (దశ 5 & 6).",
+            exp_en: "At the post-conventional level, morality is defined in terms of abstract principles and values that apply to all situations and societies (e.g., justice, life, liberty).", 
+            exp_te: "ఉత్తర-సాంప్రదాయక స్థాయిలో వ్యక్తులు చట్టాల కంటే మానవ హక్కులు, ధర్మం మరియు సార్వత్రిక నైతిక సూత్రాలకు (మహాత్మా గాంధీ వలె) ఎక్కువ ప్రాధాన్యత ఇస్తారు."
+        },
+        {
+            id: 6,
+            q_en: "A primary school teacher observes that a child frequently confuses words like 'was' for 'saw' and 'nuclear' for 'unclear'. This specific condition is known as:",
+            q_te: "ఒక పిల్లవాడు తరచుగా 'was' ని 'saw' గా మరియు 'nuclear' ని 'unclear' గా గందరగోళానికి గురిచేస్తాడని ప్రాథమిక పాఠశాల ఉపాధ్యాయుడు గమనించాడు. ఈ నిర్దిష్ట పరిస్థితిని ఏమంటారు?",
+            options: [
+                { id: "A", en: "Dyscalculia", te: "డిస్కాలిక్యులియా" },
+                { id: "B", en: "Dyslexia", te: "డిస్లెక్సియా (Dyslexia)" },
+                { id: "C", en: "Dysgraphia", te: "డిస్గ్రాఫియా" },
+                { id: "D", en: "Autism", te: "ఆటిజం" }
+            ],
+            answer: "B",
+            hint_en: "A learning difficulty related to reading.", hint_te: "పదాలను చదవడంలో ఉండే లోపం.",
+            exp_en: "Dyslexia is a learning difficulty characterized by problems with accurate or fluent word recognition and by poor spelling and decoding abilities.", 
+            exp_te: "అక్షరాలను లేదా పదాలను తారుమారుగా చదవడం (b ని d గా, saw ని was గా) అనేది పఠన వైకల్యం (Reading disorder). దీనిని డిస్లెక్సియా అంటారు."
+        },
+        {
+            id: 7,
+            q_en: "Which of the following is NOT an advantage of 'Formative Assessment'?",
+            q_te: "ఈ క్రింది వాటిలో 'నిర్మాణాత్మక మూల్యాంకనం' (Formative Assessment) యొక్క ప్రయోజనం కానిది ఏది?",
+            options: [
+                { id: "A", en: "It provides immediate feedback to students.", te: "ఇది విద్యార్థులకు తక్షణ ఫీడ్‌బ్యాక్‌ను అందిస్తుంది." },
+                { id: "B", en: "It helps teachers modify their teaching strategies.", te: "ఇది ఉపాధ్యాయులు తమ బోధనా వ్యూహాలను మార్చుకోవడానికి సహాయపడుతుంది." },
+                { id: "C", en: "It is strictly used to declare students as pass or fail at the year-end.", te: "ఇది సంవత్సరాంతంలో విద్యార్థులను పాస్ లేదా ఫెయిల్‌గా ప్రకటించడానికి మాత్రమే ఉపయోగించబడుతుంది." },
+                { id: "D", en: "It reduces exam anxiety among students.", te: "ఇది విద్యార్థులలో పరీక్షల ఆందోళనను తగ్గిస్తుంది." }
+            ],
+            answer: "C",
+            hint_en: "Formative is for improvement, not final judgment.", hint_te: "ఇది ఫైనల్ రిజల్ట్ కోసం కాదు, మెరుగుపడటం కోసం.",
+            exp_en: "Declaring students as pass or fail at the end of the academic year is the function of Summative Assessment, not Formative Assessment.", 
+            exp_te: "సంవత్సరం చివరలో పాస్/ఫెయిల్ అని ప్రకటించేది సంగ్రహణాత్మక మూల్యాంకనం (Summative). నిర్మాణాత్మక మూల్యాంకనం విద్యార్థుల లోపాలను సరిదిద్దడానికి ఉద్దేశించినది."
+        },
+        {
+            id: 8,
+            q_en: "In the context of motivation, which of the following is an example of 'Negative Reinforcement'?",
+            q_te: "ప్రేరణ (Motivation) సందర్భంలో, ఈ క్రింది వాటిలో 'ప్రతికూల పునర్బలనం' (Negative Reinforcement) కు ఉదాహరణ ఏది?",
+            options: [
+                { id: "A", en: "Giving a chocolate for scoring good marks.", te: "మంచి మార్కులు సాధించినందుకు చాక్లెట్ ఇవ్వడం." },
+                { id: "B", en: "Scolding a student for coming late.", te: "ఆలస్యంగా వచ్చినందుకు విద్యార్థిని మందలించడం." },
+                { id: "C", en: "Exempting a student from doing weekend homework because they completed all classwork perfectly.", te: "తరగతి పనులన్నీ పర్ఫెక్ట్‌గా పూర్తి చేసినందున వారాంతపు హోంవర్క్ చేయకుండా విద్యార్థికి మినహాయింపు ఇవ్వడం." },
+                { id: "D", en: "Taking away a student's playtime due to bad behavior.", te: "చెడు ప్రవర్తన కారణంగా విద్యార్థి ఆటల సమయాన్ని తీసివేయడం." }
+            ],
+            answer: "C",
+            hint_en: "Removing an unpleasant task to encourage good behavior.", hint_te: "మంచి పనికి బహుమతిగా, కష్టమైన పనిని (హోంవర్క్) తొలగించడం.",
+            exp_en: "Negative reinforcement involves removing an unpleasant stimulus (weekend homework) to increase the likelihood of a desired behavior (completing classwork).", 
+            exp_te: "విద్యార్థి మంచి ప్రవర్తనను (క్లాస్ వర్క్ చేయడం) ప్రోత్సహించడానికి, వారికి ఇష్టంలేని పనిని (హోంవర్క్) మినహాయించడాన్ని స్కిన్నర్ ప్రకారం 'ప్రతికూల పునర్బలనం' అంటారు."
+        },
+        {
+            id: 9,
+            q_en: "Which psychological approach studies the mind as an 'Information Processing System' comparing it to a computer?",
+            q_te: "మెదడును కంప్యూటర్‌తో పోల్చుతూ, మనస్సును 'సమాచార-ప్రక్రియ వ్యవస్థ' (Information Processing System) గా అధ్యయనం చేసే మనోవిజ్ఞాన శాస్త్ర విధానం ఏది?",
+            options: [
+                { id: "A", en: "Behaviorism", te: "ప్రవర్తనావాదం" },
+                { id: "B", en: "Psychoanalysis", te: "మనోవిశ్లేషణ" },
+                { id: "C", en: "Cognitive Psychology", te: "సంజ్ఞానాత్మక మనోవిజ్ఞాన శాస్త్రం (Cognitive Psychology)" },
+                { id: "D", en: "Humanism", te: "మానవతావాదం" }
+            ],
+            answer: "C",
+            hint_en: "Focuses on mental processes like memory, thinking, and logic.", hint_te: "స్మృతి, ఆలోచన వంటి మానసిక ప్రక్రియలపై దృష్టి పెడుతుంది.",
+            exp_en: "Cognitive psychology views the human mind as an information processor, analogous to a computer, focusing on how we input, store, and retrieve data.", 
+            exp_te: "సంజ్ఞానాత్మక వాదం ప్రకారం, మనిషి మెదడు ఒక కంప్యూటర్ లాగా సమాచారాన్ని సేకరించి (Input), విశ్లేషించి (Process), దాచుకుంటుంది (Memory)."
+        },
+        {
+            id: 10,
+            q_en: "According to the Right to Education (RTE) Act 2009, physical punishment and mental harassment of children in schools are:",
+            q_te: "విద్యా హక్కు చట్టం (RTE) 2009 ప్రకారం, పాఠశాలల్లో పిల్లలను శారీరకంగా శిక్షించడం మరియు మానసికంగా వేధించడం అనేది:",
+            options: [
+                { id: "A", en: "Allowed only for undisciplined students.", te: "క్రమశిక్షణ లేని విద్యార్థులకు మాత్రమే అనుమతించబడుతుంది." },
+                { id: "B", en: "Strictly prohibited under Section 17.", te: "సెక్షన్ 17 కింద ఖచ్చితంగా నిషేధించబడింది." },
+                { id: "C", en: "Left to the discretion of the Headmaster.", te: "ప్రధానోపాధ్యాయుని విచక్షణకు వదిలివేయబడింది." },
+                { id: "D", en: "Allowed with parents' permission.", te: "తల్లిదండ్రుల అనుమతితో అనుమతించబడుతుంది." }
+            ],
+            answer: "B",
+            hint_en: "It is completely banned.", hint_te: "ఇది చట్టరీత్యా నేరం.",
+            exp_en: "Section 17 of the RTE Act explicitly prohibits subjecting any child to physical punishment or mental harassment.", 
+            exp_te: "RTE చట్టం 2009 లోని సెక్షన్ 17 ప్రకారం, పాఠశాలలో పిల్లలను కొట్టడం లేదా మానసికంగా వేధించడం అనేది పూర్తిగా నిషేధించబడింది (చట్టరీత్యా నేరం)."
+        },
+        {
+            id: 11,
+            q_en: "A child remembers the colors of the rainbow using the word 'VIBGYOR'. This memory enhancement technique is known as:",
+            q_te: "ఒక పిల్లవాడు 'VIBGYOR' అనే పదాన్ని ఉపయోగించి ఇంద్రధనస్సు రంగులను గుర్తుంచుకుంటాడు. స్మృతిని పెంచే ఈ సాంకేతికతను ఏమంటారు?",
+            options: [
+                { id: "A", en: "Rote Memory", te: "బట్టీ స్మృతి" },
+                { id: "B", en: "Chunking", te: "ఖండిత పద్ధతి" },
+                { id: "C", en: "Mnemonic Device", te: "నిమోనిక్ పరికరం / స్మృతి సాధనం (Mnemonic)" },
+                { id: "D", en: "Classical Conditioning", te: "శాస్త్రీయ నిబంధనం" }
+            ],
+            answer: "C",
+            hint_en: "Creating a word from the first letters.", hint_te: "మొదటి అక్షరాలతో ఒక కోడ్ పదాన్ని సృష్టించడం.",
+            exp_en: "A mnemonic device is any learning technique that aids information retention or retrieval in human memory, such as acronyms.", 
+            exp_te: "పెద్ద సమాచారాన్ని సులభంగా గుర్తుంచుకోవడానికి (ఉదా: VIBGYOR, BODMAS) మొదటి అక్షరాలను ఉపయోగించి తయారుచేసుకునే కోడ్‌లను 'నిమోనిక్స్' (స్మృతి సాధనాలు) అంటారు."
+        },
+        {
+            id: 12,
+            q_en: "According to Carl Rogers, a healthy personality development requires the teacher/parent to provide the child with:",
+            q_te: "కార్ల్ రోజర్స్ ప్రకారం, ఆరోగ్యకరమైన మూర్తిమత్వ వికాసం జరగాలంటే ఉపాధ్యాయుడు/తల్లిదండ్రులు పిల్లవాడికి ఏమి అందించాలి?",
+            options: [
+                { id: "A", en: "Strict discipline and rules", te: "కఠినమైన క్రమశిక్షణ మరియు నియమాలు" },
+                { id: "B", en: "Conditional love based on performance", te: "పనితీరు ఆధారంగా షరతులతో కూడిన ప్రేమ" },
+                { id: "C", en: "Unconditional Positive Regard, Genuineness, and Empathy", te: "షరతులు లేని సానుకూల అంగీకారం, నిజాయితీ మరియు సహానుభూతి" },
+                { id: "D", en: "Constant criticism to make them tough", te: "వారిని కఠినంగా మార్చడానికి నిరంతర విమర్శలు" }
+            ],
+            answer: "C",
+            hint_en: "Loving them for who they are, not what they do.", hint_te: "పిల్లలు తప్పులు చేసినా వారిని ద్వేషించకుండా అంగీకరించడం.",
+            exp_en: "Rogers' Humanistic theory emphasizes that for a person to 'grow', they need an environment that provides them with genuineness, unconditional positive regard, and empathy.", 
+            exp_te: "కార్ల్ రోజర్స్ మానవతావాద సిద్ధాంతం ప్రకారం, ఎటువంటి షరతులు లేని ప్రేమ (Unconditional positive regard), సహకారం, సహానుభూతి ఉన్నప్పుడే వ్యక్తి పూర్తి స్థాయిలో వికాసం చెందుతాడు."
+        },
+        {
+            id: 13,
+            q_en: "If a student has a Mental Age (MA) of 12 and a Chronological Age (CA) of 10, what is their Intelligence Quotient (IQ)?",
+            q_te: "ఒక విద్యార్థికి మానసిక వయస్సు (MA) 12 మరియు వాస్తవ వయస్సు (CA) 10 ఉంటే, వారి ప్రజ్ఞా లబ్ధి (IQ) ఎంత?",
+            options: [
+                { id: "A", en: "83", te: "83" },
+                { id: "B", en: "100", te: "100" },
+                { id: "C", en: "120", te: "120" },
+                { id: "D", en: "140", te: "140" }
+            ],
+            answer: "C",
+            hint_en: "Formula: (MA / CA) × 100", hint_te: "సూత్రం: (మానసిక వయస్సు / వాస్తవ వయస్సు) × 100.",
+            exp_en: "IQ is calculated as (Mental Age / Chronological Age) × 100. So, (12/10) × 100 = 120.", 
+            exp_te: "ప్రజ్ఞా లబ్ధి (IQ) సూత్రం = (MA / CA) × 100. అనగా, (12/10) × 100 = 120. విద్యార్థి సగటు కంటే ఎక్కువ ప్రజ్ఞ (Superior) కలిగి ఉన్నాడు."
+        },
+        {
+            id: 14,
+            q_en: "A child watches his older brother getting scolded for playing video games instead of studying. The child decides not to play video games to avoid scolding. According to Bandura, this is an example of:",
+            q_te: "చదువుకోకుండా వీడియో గేమ్స్ ఆడుతున్న తన అన్నయ్యను తల్లిదండ్రులు తిట్టడం పిల్లవాడు చూస్తాడు. తిట్లు పడకుండా ఉండటానికి పిల్లవాడు వీడియో గేమ్స్ ఆడకూడదని నిర్ణయించుకుంటాడు. బండూరా ప్రకారం, ఇది దేనికి ఉదాహరణ?",
+            options: [
+                { id: "A", en: "Classical Conditioning", te: "శాస్త్రీయ నిబంధనం" },
+                { id: "B", en: "Vicarious Punishment", te: "పరోక్ష దండన (Vicarious Punishment)" },
+                { id: "C", en: "Vicarious Reinforcement", te: "పరోక్ష పునర్బలనం" },
+                { id: "D", en: "Insight Learning", te: "అంతర్దృష్టి అభ్యసనం" }
+            ],
+            answer: "B",
+            hint_en: "Learning what NOT to do by watching others get punished.", hint_te: "ఇతరులు శిక్ష అనుభవించడం చూసి భయపడటం.",
+            exp_en: "Vicarious punishment occurs when an individual observes someone else being punished for a behavior, making the observer less likely to perform that behavior.", 
+            exp_te: "తాను తప్పు చేయకపోయినా, పక్కవాడు చేసిన తప్పుకు శిక్ష పడటం చూసి ఆ పనిని తాను చేయకపోవడాన్ని 'పరోక్ష దండన' (Vicarious Punishment) అంటారు."
+        },
+        {
+            id: 15,
+            q_en: "Which of the following is a key component of 'Inclusive Education'?",
+            q_te: "'సమ్మిళిత విద్య' (Inclusive Education) యొక్క ముఖ్యమైన అంశం ఈ క్రింది వాటిలో ఏది?",
+            options: [
+                { id: "A", en: "Segregation of disabled students into special classes.", te: "వికలాంగ విద్యార్థులను ప్రత్యేక తరగతులకు వేరు చేయడం." },
+                { id: "B", en: "Providing the exact same instruction without modifying the curriculum.", te: "విద్యాప్రణాళికను మార్చకుండా అందరికీ ఒకేలా (కఠినంగా) బోధించడం." },
+                { id: "C", en: "Adapting the curriculum and environment to meet the diverse needs of all learners in regular classrooms.", te: "సాధారణ తరగతి గదుల్లో అభ్యాసకులందరి విభిన్న అవసరాలను తీర్చడానికి కరిక్యులమ్ మరియు వాతావరణాన్ని మార్చుకోవడం." },
+                { id: "D", en: "Focusing only on the academically gifted children.", te: "విద్యాపరంగా ప్రతిభావంతులైన పిల్లలపై మాత్రమే దృష్టి పెట్టడం." }
+            ],
+            answer: "C",
+            hint_en: "The system changes to fit the child.", hint_te: "పిల్లల అవసరాలకు తగ్గట్టుగా విద్యా వ్యవస్థ మారడం.",
+            exp_en: "Inclusive education implies that the school system must adapt to include all children, modifying teaching methods, curriculum, and physical environments.", 
+            exp_te: "ప్రత్యేక అవసరాలు గల (CWSN) పిల్లల కోసం పాఠశాల వాతావరణాన్ని, బోధనా పద్ధతులను, మూల్యాంకనాన్ని మార్చి వాళ్ళని సాధారణ పిల్లలతో కలిపి చదివించడమే సమ్మిళిత విద్య."
+        },
+        {
+            id: 16,
+            q_en: "According to Erikson's theory of psychosocial development, adolescents (ages 12-18) are primarily focused on resolving which conflict?",
+            q_te: "ఎరిక్సన్ మనోసాంఘిక వికాస సిద్ధాంతం ప్రకారం, కౌమారదశలో (12-18 ఏళ్లు) ఉన్నవారు ప్రాథమికంగా ఏ సంక్షోభాన్ని పరిష్కరించడంపై దృష్టి పెడతారు?",
+            options: [
+                { id: "A", en: "Trust vs. Mistrust", te: "నమ్మకం vs అపనమ్మకం" },
+                { id: "B", en: "Initiative vs. Guilt", te: "చొరవ చూపడం vs అపరాధ భావం" },
+                { id: "C", en: "Identity vs. Role Confusion", te: "గుర్తింపు vs పాత్ర సందిగ్ధత (Identity vs. Role Confusion)" },
+                { id: "D", en: "Intimacy vs. Isolation", te: "సాన్నిహిత్యం vs ఏకాంతం" }
+            ],
+            answer: "C",
+            hint_en: "Figuring out 'Who am I?'.", hint_te: "సమాజంలో 'నేను ఎవరు?' అని తెలుసుకునే ప్రయత్నం.",
+            exp_en: "Adolescence is characterized by the Identity vs Role Confusion stage, where teens explore their independence and develop a sense of self.", 
+            exp_te: "కౌమార దశలోని యువకులు తమ భవిష్యత్తు గురించి, సమాజంలో తమ గుర్తింపు గురించి అన్వేషిస్తారు. దాన్ని సాధించలేకపోతే పాత్ర సందిగ్ధత (Role Confusion) కు గురవుతారు."
+        },
+        {
+            id: 17,
+            q_en: "In an experiment, a rat presses a lever to get food. The food acts as a reinforcer. This type of learning, where behavior is shaped by its consequences, is called:",
+            q_te: "ఒక ప్రయోగంలో, ఒక ఎలుక ఆహారం పొందడానికి మీట (lever) ను నొక్కుతుంది. ఆహారం పునర్బలనంగా పనిచేస్తుంది. ప్రవర్తన దాని పర్యవసానాల ద్వారా రూపుదిద్దుకునే ఈ రకమైన అభ్యసనాన్ని ఏమంటారు?",
+            options: [
+                { id: "A", en: "Classical Conditioning", te: "శాస్త్రీయ నిబంధనం" },
+                { id: "B", en: "Operant Conditioning", te: "కార్యసాధక నిబంధనం (Operant Conditioning)" },
+                { id: "C", en: "Latent Learning", te: "గుప్త అభ్యసనం" },
+                { id: "D", en: "Observational Learning", te: "పరిశీలనాత్మక అభ్యసనం" }
+            ],
+            answer: "B",
+            hint_en: "Associated with B.F. Skinner.", hint_te: "బి.ఎఫ్. స్కిన్నర్ కు సంబంధించిన సిద్ధాంతం.",
+            exp_en: "Operant conditioning (Skinner) is a method of learning that employs rewards and punishments for behavior, making an association between a behavior and a consequence.", 
+            exp_te: "లక్ష్యాన్ని సాధించడానికి (ఆహారం పొందడానికి) ఎలుక మీట నొక్కడం అనే కార్యకలాపాన్ని (ఆపరేషన్ ను) చేసింది కాబట్టి, దీనిని స్కిన్నర్ 'కార్యసాధక నిబంధనం' అన్నారు."
+        },
+        {
+            id: 18,
+            q_en: "A test designed to measure a student's potential to learn a specific skill in the future (like predicting success in engineering or music) is called an:",
+            q_te: "భవిష్యత్తులో ఒక నిర్దిష్ట నైపుణ్యాన్ని నేర్చుకునే విద్యార్థి సామర్థ్యాన్ని (ఇంజనీరింగ్ లేదా సంగీతంలో విజయాన్ని అంచనా వేయడం లాగా) అంచనా వేయడానికి రూపొందించబడిన పరీక్షను ఏమంటారు?",
+            options: [
+                { id: "A", en: "Achievement Test", te: "సాధనా పరీక్ష" },
+                { id: "B", en: "Aptitude Test", te: "సహజ సామర్థ్య పరీక్ష (Aptitude Test)" },
+                { id: "C", en: "Intelligence Test", te: "ప్రజ్ఞా పరీక్ష" },
+                { id: "D", en: "Attitude Scale", te: "వైఖరి మాపని" }
+            ],
+            answer: "B",
+            hint_en: "Testing what they are naturally suited for.", hint_te: "వారి సహజ నైపుణ్యాలను అంచనా వేయడం.",
+            exp_en: "An aptitude test measures a person's capability to learn or acquire a new skill in the future, predicting success in a specific field.", 
+            exp_te: "విద్యార్థిలో భవిష్యత్తులో రాణించగల సహజ లక్షణాలు ఏ రంగంలో (సంగీతం, మెకానికల్, బోధన) ఉన్నాయో తెలుసుకోవడానికి 'సహజ సామర్థ్య పరీక్ష' (Aptitude test) నిర్వహిస్తారు."
+        },
+        {
+            id: 19,
+            q_en: "Which of the following is a characteristic of 'Divergent Thinking'?",
+            q_te: "ఈ క్రింది వాటిలో 'విభిన్న ఆలోచన' (Divergent Thinking) లక్షణం ఏది?",
+            options: [
+                { id: "A", en: "Finding the single correct answer to a standard problem.", te: "ప్రామాణిక సమస్యకు ఒకే ఒక సరైన సమాధానాన్ని కనుగొనడం." },
+                { id: "B", en: "Generating multiple, unique solutions to an open-ended problem.", te: "ఓపెన్-ఎండెడ్ సమస్యకు బహుళ, ప్రత్యేకమైన పరిష్కారాలను రూపొందించడం." },
+                { id: "C", en: "Memorizing facts step-by-step.", te: "వాస్తవాలను అంచలంచలుగా బట్టీ పట్టడం." },
+                { id: "D", en: "Thinking strictly within the rules.", te: "నియమాల పరిధిలోనే ఖచ్చితంగా ఆలోచించడం." }
+            ],
+            answer: "B",
+            hint_en: "Thinking outside the box.", hint_te: "సృజనాత్మకంగా ఆలోచించడం.",
+            exp_en: "Divergent thinking is synonymous with creativity. It involves producing a wide variety of original ideas or solutions to a problem.", 
+            exp_te: "సమస్యకు ఒకే పరిష్కారం కాకుండా, సృజనాత్మకతతో అనేక పరిష్కారాలను (అనేక కోణాల్లో ఆలోచించడం) చెప్పే సామర్థ్యాన్ని విభిన్న (Divergent) ఆలోచన అంటారు."
+        },
+        {
+            id: 20,
+            q_en: "According to NCF 2005, what is the role of 'Errors and Mistakes' made by children?",
+            q_te: "NCF 2005 ప్రకారం, పిల్లలు చేసే 'తప్పులు మరియు పొరపాట్ల' పాత్ర ఏమిటి?",
+            options: [
+                { id: "A", en: "They should be severely punished.", te: "వాటిని కఠినంగా శిక్షించాలి." },
+                { id: "B", en: "They indicate that the child has low intelligence.", te: "పిల్లవాడికి తెలివితేటలు తక్కువ అని అవి సూచిస్తాయి." },
+                { id: "C", en: "They provide insight into the child's thinking process and are windows to learning.", te: "అవి పిల్లవాడి ఆలోచనా విధానం గురించి అంతర్దృష్టిని అందిస్తాయి మరియు అభ్యసనానికి కిటికీల లాంటివి." },
+                { id: "D", en: "They should be completely ignored by the teacher.", te: "ఉపాధ్యాయుడు వాటిని పూర్తిగా విస్మరించాలి." }
+            ],
+            answer: "C",
+            hint_en: "Mistakes are proof that you are trying.", hint_te: "తప్పులు నేర్చుకోవడంలో సహజ భాగం.",
+            exp_en: "NCF 2005 views errors not as failures, but as essential indicators of how a child is thinking and attempting to construct knowledge.", 
+            exp_te: "పిల్లలు తప్పులు చేయడం సహజం. ఆ తప్పుల ద్వారా పిల్లవాడు ఆ కాన్సెప్ట్ గురించి ఎలా ఆలోచిస్తున్నాడో (ఆలోచనా విధానం) తెలుసుకుని, బోధనను మెరుగుపరుచుకోవచ్చు."
+        },
+        {
+            id: 21,
+            q_en: "The principle of 'Proximodistal' development states that growth proceeds from:",
+            q_te: "'సమీప దూరస్థ' (Proximodistal) వికాస సూత్రం పెరుగుదల ఎక్కడి నుండి ఎక్కడికి సాగుతుందని తెలుపుతుంది?",
+            options: [
+                { id: "A", en: "Head to toe", te: "తల నుండి పాదాల వరకు" },
+                { id: "B", en: "Center of the body to the extremities", te: "శరీరం మధ్య భాగం నుండి వెలుపలి (అంత్య) భాగాలకు" },
+                { id: "C", en: "Simple to complex", te: "సులభం నుండి కష్టానికి" },
+                { id: "D", en: "General to specific", te: "సాధారణం నుండి నిర్దిష్టానికి" }
+            ],
+            answer: "B",
+            hint_en: "From the spinal cord outwards to the fingers.", hint_te: "వెన్నుపాము నుండి చేతి వేళ్ల వైపు.",
+            exp_en: "The proximodistal principle describes motor development that proceeds from the center of the body outward to the limbs.", 
+            exp_te: "వికాసం ముందుగా వెన్నుపాము వద్ద (మధ్యభాగంలో) మొదలై చేతులు, ఆ తర్వాత వేళ్ల (బయటి) వైపుకు విస్తరించడాన్ని సమీప దూరస్థ వికాసం అంటారు. (తల నుండి పాదాలకి అయితే శిరోపాదాభిముఖ)."
+        },
+        {
+            id: 22,
+            q_en: "A student who is visually impaired joins a regular classroom. As an inclusive teacher, you should primarily use:",
+            q_te: "దృష్టి లోపం ఉన్న విద్యార్థి సాధారణ తరగతిలో చేరాడు. సమ్మిళిత ఉపాధ్యాయుడిగా, మీరు ప్రాథమికంగా దేనిని ఉపయోగించాలి?",
+            options: [
+                { id: "A", en: "More written notes on the board.", te: "బోర్డుపై మరిన్ని వ్రాతపూర్వక నోట్స్." },
+                { id: "B", en: "Colorful visual charts.", te: "రంగురంగుల దృశ్య చార్ట్‌లు." },
+                { id: "C", en: "Audio materials, verbal explanations, and tactile (touchable) models.", te: "ఆడియో మెటీరియల్స్, మౌఖిక వివరణలు మరియు స్పర్శ ద్వారా తెలుసుకునే నమూనాలు." },
+                { id: "D", en: "Sign language.", te: "సంజ్ఞా భాష (Sign language)." }
+            ],
+            answer: "C",
+            hint_en: "Engage their hearing and sense of touch.", hint_te: "కంటికి బదులుగా వినికిడి, స్పర్శను ఉపయోగించడం.",
+            exp_en: "For visually impaired students, teaching should be adapted by using auditory (sound) inputs and tactile (touch) models like Braille or 3D shapes.", 
+            exp_te: "కంటి చూపు లేని పిల్లలు విని నేర్చుకుంటారు, లేదా తాకి తెలుసుకుంటారు. కాబట్టి ఉపాధ్యాయుడు ఆడియో బుక్స్, 3D మోడల్స్, మౌఖిక వివరణలు వాడాలి."
+        },
+        {
+            id: 23,
+            q_en: "Which assessment is conducted to determine a student's strengths, weaknesses, knowledge, and skills prior to instruction?",
+            q_te: "బోధనకు ముందు విద్యార్థి బలాలు, బలహీనతలు, జ్ఞానం మరియు నైపుణ్యాలను నిర్ణయించడానికి ఏ మూల్యాంకనం నిర్వహించబడుతుంది?",
+            options: [
+                { id: "A", en: "Formative Assessment", te: "నిర్మాణాత్మక మూల్యాంకనం" },
+                { id: "B", en: "Placement Assessment", te: "స్థాన నిర్ధారణ మూల్యాంకనం (Placement Assessment)" },
+                { id: "C", en: "Summative Assessment", te: "సంగ్రహణాత్మక మూల్యాంకనం" },
+                { id: "D", en: "Peer Assessment", te: "సహచర మూల్యాంకనం" }
+            ],
+            answer: "B",
+            hint_en: "Testing baseline knowledge to place them in the right level.", hint_te: "కోర్సు ప్రారంభంలో ఎంట్రీ లెవెల్ ను చెక్ చేయడం.",
+            exp_en: "Placement evaluation is used to assess the entry behavior and readiness of a learner before starting a new course or unit.", 
+            exp_te: "పాఠం లేదా విద్యా సంవత్సరం ప్రారంభించే ముందు, విద్యార్థికి ఆ సబ్జెక్టుపై ఎంత పూర్వ జ్ఞానం ఉందో (ఎంట్రీ లెవెల్ బిహేవియర్) తెలుసుకోవడానికి చేసేదే ప్లేస్‌మెంట్ మూల్యాంకనం."
+        },
+        {
+            id: 24,
+            q_en: "A child learns that fire is hot by burning their finger. This process of learning through direct consequences is heavily associated with the principles of:",
+            q_te: "వేలు కాల్చుకోవడం ద్వారా మంట వేడిగా ఉంటుందని పిల్లవాడు నేర్చుకుంటాడు. ప్రత్యక్ష పరిణామాల ద్వారా నేర్చుకునే ఈ ప్రక్రియ దేని సూత్రాలతో బలంగా ముడిపడి ఉంది?",
+            options: [
+                { id: "A", en: "Insight Learning", te: "అంతర్దృష్టి అభ్యసనం" },
+                { id: "B", en: "Trial and Error / Operant learning", te: "యత్న దోష అభ్యసనం / కార్యసాధక అభ్యసనం" },
+                { id: "C", en: "Classical Conditioning", te: "శాస్త్రీయ నిబంధనం" },
+                { id: "D", en: "Observational Learning", te: "పరిశీలనాత్మక అభ్యసనం" }
+            ],
+            answer: "B",
+            hint_en: "Learning from the results of one's own actions.", hint_te: "తాను చేసిన పని పర్యవసానం ద్వారా నేర్చుకోవడం.",
+            exp_en: "Learning from the direct consequences (pain from burning) of one's actions is the core of Trial and Error learning (Thorndike) and Operant Conditioning (Skinner).", 
+            exp_te: "తప్పు చేసి దాని ప్రతిఫలం అనుభవించడం ద్వారా ఆ తప్పును మళ్ళీ చేయకూడదు అని నేర్చుకోవడం యత్న దోష (Trial and Error) అభ్యసనానికి ఉదాహరణ."
+        },
+        {
+            id: 25,
+            q_en: "Which of the following is NOT a stage in the 'Micro-Teaching' cycle?",
+            q_te: "ఈ క్రింది వాటిలో 'సూక్ష్మ బోధన' (Micro-Teaching) చక్రంలో భాగం కాని దశ ఏది?",
+            options: [
+                { id: "A", en: "Plan", te: "ప్రణాళిక" },
+                { id: "B", en: "Teach", te: "బోధన" },
+                { id: "C", en: "Summative Exam", te: "సంగ్రహణాత్మక పరీక్ష (Summative Exam)" },
+                { id: "D", en: "Feedback", te: "ఫీడ్‌బ్యాక్" }
+            ],
+            answer: "C",
+            hint_en: "Micro-teaching is for teacher training, not student exams.", hint_te: "సూక్ష్మ బోధన ఉపాధ్యాయ శిక్షణ కోసం, విద్యార్థుల పరీక్ష కోసం కాదు.",
+            exp_en: "The micro-teaching cycle consists of Plan, Teach, Feedback, Re-plan, Re-teach, and Re-feedback. It does not include student exams.", 
+            exp_te: "సూక్ష్మ బోధన అనేది ఉపాధ్యాయ శిక్షణలో (B.Ed/D.Ed) బోధనా నైపుణ్యాలను ప్రాక్టీస్ చేయడానికి వాడేది. ఇందులో విద్యార్థులకు ఫైనల్ పరీక్షలు పెట్టడం ఉండదు."
+        },
+        {
+            id: 26,
+            q_en: "According to Howard Gardner's theory of Multiple Intelligences, a person who is highly aware of their own feelings, motives, and desires has strong:",
+            q_te: "హోవార్డ్ గార్డనర్ బహుళ ప్రజ్ఞా సిద్ధాంతం ప్రకారం, తన స్వంత భావాలు, ఉద్దేశ్యాలు మరియు కోరికల గురించి బాగా తెలిసిన వ్యక్తి దేనిని బలంగా కలిగి ఉంటాడు?",
+            options: [
+                { id: "A", en: "Interpersonal Intelligence", te: "వ్యక్త్యంతర ప్రజ్ఞ" },
+                { id: "B", en: "Intrapersonal Intelligence", te: "వ్యక్తిగత/అంతర్గత ప్రజ్ఞ (Intrapersonal)" },
+                { id: "C", en: "Existential Intelligence", te: "అస్తిత్వ ప్రజ్ఞ" },
+                { id: "D", en: "Spatial Intelligence", te: "ప్రాదేశిక ప్రజ్ఞ" }
+            ],
+            answer: "B",
+            hint_en: "Intelligence directed inward.", hint_te: "తన గురించిన అవగాహన.",
+            exp_en: "Intrapersonal intelligence is the ability to understand oneself, reflecting upon one's own strengths, weaknesses, and emotions.", 
+            exp_te: "గార్డనర్ సిద్ధాంతం ప్రకారం, తన గురించి తాను పూర్తిగా తెలుసుకోవడం, తన లక్ష్యాలను నియంత్రించుకోగలగడాన్ని అంతర్గత (Intrapersonal) ప్రజ్ఞ అంటారు."
+        },
+        {
+            id: 27,
+            q_en: "If newly learned information helps a person easily learn a new, related skill, this is known as:",
+            q_te: "కొత్తగా నేర్చుకున్న సమాచారం ఒక వ్యక్తి కొత్త, సంబంధిత నైపుణ్యాన్ని సులభంగా నేర్చుకోవడంలో సహాయపడితే, దీనిని ఏమంటారు?",
+            options: [
+                { id: "A", en: "Negative Transfer", te: "ప్రతికూల బదలాయింపు" },
+                { id: "B", en: "Positive Transfer", te: "అనుకూల బదలాయింపు (Positive Transfer)" },
+                { id: "C", en: "Zero Transfer", te: "శూన్య బదలాయింపు" },
+                { id: "D", en: "Retroactive Interference", te: "తిరోగమన అవరోధం" }
+            ],
+            answer: "B",
+            hint_en: "The past learning facilitates the new learning.", hint_te: "పాత జ్ఞానం కొత్త జ్ఞానానికి సహాయపడటం.",
+            exp_en: "Positive transfer of learning occurs when prior learning or experience makes it easier to learn a new, similar task (e.g., knowing how to ride a bicycle helps with riding a motorcycle).", 
+            exp_te: "ఒక నైపుణ్యం మరో నైపుణ్యం నేర్చుకోవడానికి సహాయపడితే (ఉదా: గణితం రావడం వల్ల ఫిజిక్స్ సులభంగా అర్థమవడం) దానిని 'అనుకూల బదలాయింపు' అంటారు."
+        },
+        {
+            id: 28,
+            q_en: "The 'Project Method' of education, which emphasizes learning by doing and experiencing, is based on the philosophy of:",
+            q_te: "చేస్తూ నేర్చుకోవడం మరియు అనుభవించడం నొక్కిచెప్పే విద్యా 'ప్రాజెక్ట్ పద్ధతి' ఏ తత్వశాస్త్రం ఆధారంగా రూపొందించబడింది?",
+            options: [
+                { id: "A", en: "Idealism", te: "ఆదర్శవాదం" },
+                { id: "B", en: "Pragmatism", te: "ఆచరణాత్మక వాదం / ప్రయోజనవాదం (Pragmatism)" },
+                { id: "C", en: "Naturalism", te: "ప్రకృతి వాదం" },
+                { id: "D", en: "Realism", te: "వాస్తవికవాదం" }
+            ],
+            answer: "B",
+            hint_en: "Associated with John Dewey and W.H. Kilpatrick.", hint_te: "జాన్ డ్యూయీ మరియు కిల్ ప్యాట్రిక్ తో ముడిపడిన వాదం.",
+            exp_en: "The project method is rooted in Pragmatism, championed by John Dewey. It focuses on practical, experiential learning where students solve real-world problems.", 
+            exp_te: "జాన్ డ్యూయీ యొక్క ఆచరణాత్మక (Pragmatic) వాదం ఆధారంగా కిల్ ప్యాట్రిక్ ప్రాజెక్ట్ పద్ధతిని రూపొందించారు. ఇది ప్రయోగాత్మక అభ్యసనంపై ఆధారపడి ఉంటుంది."
+        },
+        {
+            id: 29,
+            q_en: "What does the term 'Sociometry' refer to in educational psychology?",
+            q_te: "విద్యా మనోవిజ్ఞాన శాస్త్రంలో 'సాంఘికమితి' (Sociometry) అనే పదం దేనిని సూచిస్తుంది?",
+            options: [
+                { id: "A", en: "A technique to measure the IQ of students.", te: "విద్యార్థుల IQ కొలిచే సాంకేతికత." },
+                { id: "B", en: "A technique to measure and map the social relationships and group dynamics among students.", te: "విద్యార్థుల మధ్య సామాజిక సంబంధాలు మరియు సమూహ గతిశీలతను కొలవడానికి మరియు మ్యాప్ చేయడానికి వాడే సాంకేతికత." },
+                { id: "C", en: "A test to assess mathematical aptitude.", te: "గణిత సామర్థ్యాన్ని అంచనా వేసే పరీక్ష." },
+                { id: "D", en: "A method of continuous evaluation.", te: "నిరంతర మూల్యాంకన పద్ధతి." }
+            ],
+            answer: "B",
+            hint_en: "Identifying stars and isolates in a class.", hint_te: "తరగతిలో నాయకుడిని, ఏకాకిని గుర్తించడం.",
+            exp_en: "Sociometry, developed by Jacob Moreno, is a quantitative method used to measure social relationships, helping teachers identify popular children and those who are isolated.", 
+            exp_te: "తరగతి గదిలో విద్యార్థుల మధ్య ఉన్న సాంఘిక సంబంధాలను (ఎవరికి ఎవరు ఫ్రెండ్, ఎవరు ఒంటరిగా ఉన్నారు అని) అంచనా వేసే పద్ధతినే సాంఘికమితి (Sociometry) అంటారు."
+        },
+        {
+            id: 30,
+            q_en: "A student is intrinsically motivated to read a science book. Which of the following is the most likely reason?",
+            q_te: "ఒక విద్యార్థి సైన్స్ పుస్తకం చదవడానికి అంతర్గతంగా ప్రేరేపించబడ్డాడు (Intrinsically motivated). దీనికి ఈ క్రింది వాటిలో అత్యంత సంభావ్య కారణం ఏది?",
+            options: [
+                { id: "A", en: "His parents promised him a new bicycle if he finishes it.", te: "పుస్తకం పూర్తిచేస్తే కొత్త సైకిల్ ఇస్తానని తల్లిదండ్రులు వాగ్దానం చేశారు." },
+                { id: "B", en: "He wants to score the highest marks in the class test.", te: "క్లాస్ టెస్ట్‌లో అత్యధిక మార్కులు సాధించాలనుకుంటున్నాడు." },
+                { id: "C", en: "He is genuinely curious about how black holes are formed.", te: "బ్లాక్ హోల్స్ ఎలా ఏర్పడతాయో తెలుసుకోవాలనే నిజమైన ఉత్సుకత (ఆసక్తి) అతనికి ఉంది." },
+                { id: "D", en: "His teacher threatened to punish him if he doesn't read.", te: "చదవకపోతే శిక్షిస్తానని ఉపాధ్యాయుడు బెదిరించాడు." }
+            ],
+            answer: "C",
+            hint_en: "Doing something for the pure joy of learning.", hint_te: "బయటి వారి ఒత్తిడి/బహుమతి లేకుండా తన ఇష్టంతో చేయడం.",
+            exp_en: "Intrinsic motivation comes from internal desires, such as curiosity or the enjoyment of the task itself, without external rewards or pressures.", 
+            exp_te: "సైకిల్, మార్కులు, శిక్ష ఇవన్నీ బాహ్య ప్రేరణ కారకాలు. కేవలం సబ్జెక్టుపై ఆసక్తితో, తన ఆత్మసంతృప్తి కోసం చదవడాన్నే అంతర్గత ప్రేరణ అంటారు."
+        }
+    ];
+
+    const quizContainer = document.getElementById("quiz-container");
+
+    function loadQuestions() {
+        questionsData.forEach((q, index) => {
+            let optionsHTML = '';
+            q.options.forEach(opt => {
+                optionsHTML += `
+                    <li>
+                        <label>
+                            <input type="radio" name="q${q.id}" value="${opt.id}">
+                            <b>${opt.id}.</b> ${opt.en} <br>
+                            <span style="color:#C62828; font-size: 14px; margin-left: 25px;">${opt.te}</span>
+                        </label>
+                    </li>
+                `;
+            });
+
+            const questionHTML = `
+                <div class="question-card" id="card-${q.id}">
+                    <div class="question-text">
+                        <div class="lang-en">Q${index + 1}. ${q.q_en}</div>
+                        <div class="lang-te">ప్ర${index + 1}. ${q.q_te}</div>
+                    </div>
+                    <ul class="options">
+                        ${optionsHTML}
+                    </ul>
+                    <div class="btn-group">
+                        <button class="btn-hint" onclick="showHint(${q.id})">💡 Hint</button>
+                        <button class="btn-check" onclick="checkAnswer(${q.id}, '${q.answer}')">✅ Check Answer</button>
+                    </div>
+                    <div id="feedback-${q.id}" class="feedback-box">
+                        <strong id="result-msg-${q.id}"></strong>
+                        <div class="explanation">
+                            <b style="color:#283593;">Explanation:</b> ${q.exp_en} <br><br>
+                            <b style="color:#C62828;">వివరణ:</b> ${q.exp_te}
+                        </div>
+                    </div>
+                </div>
+            `;
+            quizContainer.innerHTML += questionHTML;
+        });
+    }
+
+    const hintModal = document.getElementById("hintModal");
+    function showHint(id) {
+        const q = questionsData.find(item => item.id === id);
+        document.getElementById("hintTextEn").innerText = q.hint_en;
+        document.getElementById("hintTextTe").innerText = q.hint_te;
+        hintModal.style.display = "block";
+    }
+    function closeHint() { hintModal.style.display = "none"; }
+    window.onclick = function(event) {
+        if (event.target == hintModal) { hintModal.style.display = "none"; }
+    }
+
+    function checkAnswer(id, correctAnswer) {
+        const selectedOption = document.querySelector(`input[name="q${id}"]:checked`);
+        const feedbackBox = document.getElementById(`feedback-${id}`);
+        const resultMsg = document.getElementById(`result-msg-${id}`);
+
+        if (!selectedOption) {
+            alert("Please select an option first! / దయచేసి ముందుగా ఒక ఆప్షన్ ఎంచుకోండి!");
+            return;
+        }
+
+        feedbackBox.style.display = "block";
+        if (selectedOption.value === correctAnswer) {
+            feedbackBox.className = "feedback-box correct";
+            resultMsg.innerText = "🎉 Correct Answer! / సరైన సమాధానం!";
+        } else {
+            feedbackBox.className = "feedback-box incorrect";
+            resultMsg.innerText = `❌ Incorrect. The correct answer is '${correctAnswer}'. / తప్పు సమాధానం. సరైన ఆన్సర్ '${correctAnswer}'.`;
+        }
+    }
+
+    window.onload = loadQuestions;
+
+</script>
+
+</body>
+</html>
